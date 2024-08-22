@@ -6,7 +6,7 @@
    ###                            Choosing Between var and let for Properties in a Struct
    -> In general, prefer let wherever possible to make your code safer and only use var when you need to allow changes to the property.
 
-### 2.
+### 2. what is type annotation in swift?
    - type annotation is the process of explicitly specifying the type of a variable, constant, or function. While Swift can often infer types automatically 
      based on the value assigned, you can provide a type annotation to make the type explicit.
 
