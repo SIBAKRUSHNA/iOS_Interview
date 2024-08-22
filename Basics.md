@@ -7,7 +7,20 @@
    -> In general, prefer let wherever possible to make your code safer and only use var when you need to allow changes to the property.
 
 ### 2.
+   - type annotation is the process of explicitly specifying the type of a variable, constant, or function. While Swift can often infer types automatically 
+     based on the value assigned, you can provide a type annotation to make the type explicit.
 
+    ```swift
+   // Variable with type annotation
+     var message: String = "Hello, World!"
+   // Constant with type annotation
+     let year: Int = 2024
+   // Function with type annotations
+     func greet(name: String) -> String {
+      return "Hello, \(name)!"
+      }
+       ```
+     
 ### 3.
 
 ### 4.
