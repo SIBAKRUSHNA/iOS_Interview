@@ -54,15 +54,3 @@ let user = getUser()
 print(user.name)  // "Alice"
 print(user.age)   // 30
  ```
-
-### 5.
-
-### 6.
-
-### 7.
-
-### 8.
-
-### 9.
-
-### 10.
