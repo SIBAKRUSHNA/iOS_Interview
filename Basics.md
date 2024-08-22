@@ -22,7 +22,7 @@
       }
    ```
      
-### 3. what is  typealias in swift ?
+### 3. what is  typealias in swift?
    - In Swift, a typealias is a feature that allows you to define an alternative name (or alias) for an existing type. This can be useful for making code 
      more readable, for simplifying complex type names, or for providing meaningful names that better describe the role of the type in your code.
 
@@ -42,7 +42,18 @@ func loadData(completion: CompletionHandler) {
 }
    ```
 
-### 4.
+### 4. what is tuple in swift?
+   -  Tuple is a group of multiple values combined into a single compound value.
+
+ ```swift
+   func getUser() -> (name: String, age: Int) {
+    return ("Alice", 30)
+}
+
+let user = getUser()
+print(user.name)  // "Alice"
+print(user.age)   // 30
+ ```
 
 ### 5.
 
