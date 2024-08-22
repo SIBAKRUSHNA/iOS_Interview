@@ -10,7 +10,8 @@
    - type annotation is the process of explicitly specifying the type of a variable, constant, or function. While Swift can often infer types automatically 
      based on the value assigned, you can provide a type annotation to make the type explicit.
 
-    ```swift
+    
+   ```swift
    // Variable with type annotation
      var message: String = "Hello, World!"
    // Constant with type annotation
@@ -19,7 +20,7 @@
      func greet(name: String) -> String {
       return "Hello, \(name)!"
       }
-       ```
+   ```
      
 ### 3.
 
