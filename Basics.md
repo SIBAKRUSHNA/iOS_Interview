@@ -22,7 +22,25 @@
       }
    ```
      
-### 3.
+### 3. what is  typealias in swift ?
+   - In Swift, a typealias is a feature that allows you to define an alternative name (or alias) for an existing type. This can be useful for making code 
+     more readable, for simplifying complex type names, or for providing meaningful names that better describe the role of the type in your code.
+
+```swift
+  // Defining a typealias for a tuple
+typealias HTTPStatus = (code: Int, message: String)
+
+let success: HTTPStatus = (200, "OK")
+let notFound: HTTPStatus = (404, "Not Found")
+
+// Defining a typealias for a closure
+typealias CompletionHandler = (Bool) -> Void
+
+func loadData(completion: CompletionHandler) {
+    // Some loading logic...
+    completion(true)
+}
+   ```
 
 ### 4.
 
