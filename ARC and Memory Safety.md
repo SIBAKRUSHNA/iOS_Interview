@@ -52,7 +52,7 @@ parentInstance = nil
 childInstance = nil
 
 ```
-![](https://www.thomashanning.com/content/images/wordpress/2016/09/retain-cycle-image-4.png)
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*6ckwxMS823wjVZFpMfk6jg.png)
 
 ### Resolving the Retain Cycle
 ``` swift
@@ -80,4 +80,4 @@ parentInstance = nil
 childInstance = nil
 
 ```    
-![](https://www.thomashanning.com/content/images/wordpress/2016/09/retain-cycle-image-5.png)
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*A6yTWls7nfluyhS1R_ypBA.png)
