@@ -11,3 +11,9 @@
 
 ### 4. what is @envarevent in swiftUI?
   - The @Environment property wrapper in SwiftUI allows you to read values from a view’s environment. 
+
+### 5. What is @State in swiftUI ?
+  - In SwiftUI, @State is a property wrapper that manages local state within a view.
+
+### 6. What is @Binding in swiftUI ?
+  - In SwiftUI, @Binding is a property wrapper used to create a two-way connection between a parent view and a child view.
