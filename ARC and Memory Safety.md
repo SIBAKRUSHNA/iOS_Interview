@@ -78,6 +78,3 @@ parentInstance = nil
 childInstance = nil
 
 ```    
-### 9.
-
-### 10.
