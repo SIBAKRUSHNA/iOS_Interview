@@ -5,36 +5,20 @@
     without using a method.
 
     ```swift
-     class WeekDays {
-    private var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+     struct MultiplicationTable {
+    var multiplier: Int
 
-    // Subscript definition
-    subscript(index: Int) -> String? {
-        get {
-            if index >= 0 && index < days.count {
-                return days[index]
-            } else {
-                return nil
-            }
-        }
-        set {
-            if let newValue = newValue, index >= 0 && index < days.count {
-                days[index] = newValue
-             }
-         }
-      }
+    // Subscript to calculate the product for a given number
+    subscript(index: Int) -> Int {
+        return multiplier * index
+       }
     }
-    
-    let week = WeekDays()
-    
-    // Accessing elements using subscript
-    print(week[0] ?? "Invalid Index") // Output: Sunday
-    print(week[6] ?? "Invalid Index") // Output: Saturday
 
-    // Modifying elements using subscript
-    week[6] = "Funday"
-    print(week[6] ?? "Invalid Index") // Output: Funday
+    let table = MultiplicationTable(multiplier: 5)
 
-    // Accessing an out-of-bound index
-    print(week[7] ?? "Invalid Index") // Output: Invalid Index
-    ```
+    // Accessing the multiplication table using the subscript
+    print(table[1])  // Output: 5
+    print(table[2])  // Output: 10
+    print(table[3])  // Output: 15
+    print(table[10]) // Output: 50
+     ```
