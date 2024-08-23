@@ -36,10 +36,6 @@ class Student {
  print(robert.age) // print: 15
  // assigning or changing a value is not allowed
 ```
-### 8.
-
-### 9.
-
-### 10.
-
-### 11.
+### 8. Can you use the private properties in extensions?
+  - Yes, if extension is present in same swift file.
+    
