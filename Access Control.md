@@ -1,6 +1,11 @@
 ## iOS Developers Interview Access Control Questions
 
-### 1.
+### 1. What are the access controls in swift?
+  - open
+  - public
+  - internal
+  - private
+  - fileprivate
 
 ### 2.
 
