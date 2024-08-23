@@ -46,6 +46,10 @@ for item in animals {
   - Opaque type refers to a type that complies with a particular protocol but keeps the actual type hidden.
 
     ```swift
+    protocol Calcualte {
+    func getValue() -> Int
+    }
+    
     struct Add: Calcualte {
     var valueOne = 0
     var valueTwo = 0
