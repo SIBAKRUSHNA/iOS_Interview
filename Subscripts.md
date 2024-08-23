@@ -37,5 +37,4 @@
 
     // Accessing an out-of-bound index
     print(week[7] ?? "Invalid Index") // Output: Invalid Index
-
   ```
