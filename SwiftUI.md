@@ -15,6 +15,8 @@
  ### 5. What is ZStack in swiftUI?
    - The ZStack view is a layout container where elements, or subviews, are arranged as overlaying one another
 
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Q5PisUZG2BoJYvfHExMiow.png)
+
 ### 6. What is the difference between uikit and swiftUI?
   -  SwitUI is a declarative framework but UIKit is an imperative framework
 
