@@ -7,6 +7,8 @@
   - private
   - fileprivate
 
+![](https://i.sstatic.net/niGYM.png)
+
 ### 2. What is the open access controls?
   - Access to data members and member functions not only within the same module or target but also outside of it.
     
