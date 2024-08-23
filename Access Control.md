@@ -22,7 +22,7 @@
 ### 7. How to implement a property which is public/internal but mutation is private?
 - In Swift, you can use the `private(set)` keyword to make a property's setter private, and the `public` keyword to make its getter public.
   
-  ```swift
+```swift
 class Student {
      var name: String
      private(set) public var age: Int
@@ -35,7 +35,7 @@ class Student {
  // accessible because of the public getter
  print(robert.age) // print: 15
  // assigning or changing a value is not allowed
-  ```
+```
 ### 8.
 
 ### 9.
