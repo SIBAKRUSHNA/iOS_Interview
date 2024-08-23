@@ -42,3 +42,21 @@ for item in animals {
     print(item.sound())
 }
 ```
+### 2. What is opaque types in swift?
+  - Opaque type refers to a type that complies with a particular protocol but keeps the actual type hidden.
+
+    ```swift
+    struct Add: Calcualte {
+    var valueOne = 0
+    var valueTwo = 0
+    func getValue() -> Int {
+       return valueOne + valueTwo
+       }
+     }
+
+    func getResult() -> some Calcualte {
+      return Add(valueOne: 20, valueTwo: 30)
+    }
+    let value = getResult()
+    print(value.getValue())
+    ```
