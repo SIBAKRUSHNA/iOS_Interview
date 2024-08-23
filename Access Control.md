@@ -7,15 +7,16 @@
   - private
   - fileprivate
 
-### 2.
+### 2. What is the open access controls?
+  - Access to data members and member functions not only within the same module or target but also outside of it.
+    
+### 3. What is the public access controls?
 
-### 3.
+### 4. What is the internal access controls?
 
-### 4.
+### 5. What is the private access controls?
 
-### 5.
-
-### 6.
+### 6. What is the fileprivate access controls?
 
 ### 7.
 
