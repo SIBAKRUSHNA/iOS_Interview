@@ -20,13 +20,13 @@
         set {
             if let newValue = newValue, index >= 0 && index < days.count {
                 days[index] = newValue
-            }
-        }
+             }
+         }
+      }
     }
-}
-
+    
     let week = WeekDays()
-
+    
     // Accessing elements using subscript
     print(week[0] ?? "Invalid Index") // Output: Sunday
     print(week[6] ?? "Invalid Index") // Output: Saturday
