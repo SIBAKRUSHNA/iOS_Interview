@@ -23,8 +23,61 @@
   - Weak references are safer as they automatically become nil when the object is released. Unowned references 
     can cause crashes if the object is destroyed
     
-### 8.
+### 8. what is retain cycle?
+   - A retain cycle occurs in Swift when two or more objects hold strong references to each other, preventing 
+     them from being deallocated.
+### Retain Cycle Example
+``` swift
+class Parent {
+    var child: Child?
+    
+    deinit {
+        print("Parent is being deinitialized")
+    }
+}
+class Child {
+    var parent: Parent?
+    
+    deinit {
+        print("Child is being deinitialized")
+    }
+}
+var parentInstance: Parent? = Parent()
+var childInstance: Child? = Child()
 
+parentInstance?.child = childInstance
+childInstance?.parent = parentInstance
+
+parentInstance = nil
+childInstance = nil
+
+```
+### Resolving the Retain Cycle
+``` swift
+class Parent {
+    var child: Child?
+    
+    deinit {
+        print("Parent is being deinitialized")
+    }
+}
+class Child {
+    weak var parent: Parent?  // Use weak to avoid retain cycle
+    
+    deinit {
+        print("Child is being deinitialized")
+    }
+}
+var parentInstance: Parent? = Parent()
+var childInstance: Child? = Child()
+
+parentInstance?.child = childInstance
+childInstance?.parent = parentInstance
+
+parentInstance = nil
+childInstance = nil
+
+```    
 ### 9.
 
 ### 10.
