@@ -29,3 +29,22 @@
 ### 9. What is @Binding in swiftUI ?
   - In Swift, @Binding is a property wrapper used in SwiftUI to create a two-way connection between a view and its 
     underlying data.
+
+### 10. What is @Published in swiftUI ?
+  - @Published is a property wrapper in SwiftUI that lets you mark a property of a class as observable
+
+### 11. What is @ObservedObject in swiftUI ?
+  -  In SwiftUI, @ObservedObject is a property wrapper used to create a reference to an observable object, which is a class 
+     conforming to the ObservableObject protocol. This allows the view to automatically update whenever the observable 
+     object changes.
+
+### 12. What is @EnvironmentObject in swiftUI ?
+  - In SwiftUI, @EnvironmentObject is a property wrapper used to share data across the entire view hierarchy without having 
+    to pass the data explicitly from parent to child views. It allows views to access and observe shared data from the 
+    environment.
+
+### 13. What is @StateObject in swiftUI ?
+  - In SwiftUI, @StateObject is a property wrapper used to create and manage the lifecycle of an observable object. It is 
+    used to initialize and own an instance of an ObservableObject in a view, ensuring that the object is created only once 
+    and persists for the lifetime of the view.
+
