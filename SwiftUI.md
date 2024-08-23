@@ -5,15 +5,24 @@
 
  ### 2. What is some in swiftUI?
   - We learned that the “some” keyword signifies an opaque type
+    
+ ### 3. What is VStack in swiftUI?
+   - A VStack works exactly like an HStack, but in the vertical direction.
 
-### 3. What is the difference between uikit and swiftUI?
+ ### 4. What is HStack in swiftUI?
+   - A view that arranges its subviews in a horizontal line.
+
+ ### 5. What is ZStack in swiftUI?
+   - The ZStack view is a layout container where elements, or subviews, are arranged as overlaying one another
+
+### 6. What is the difference between uikit and swiftUI?
   -  SwitUI is a declarative framework but UIKit is an imperative framework
 
-### 4. what is @envarevent in swiftUI?
+### 7. what is @envarevent in swiftUI?
   - The @Environment property wrapper in SwiftUI allows you to read values from a view’s environment. 
 
-### 5. What is @State in swiftUI ?
+### 8. What is @State in swiftUI ?
   - In SwiftUI, @State is a property wrapper that manages local state within a view.
 
-### 6. What is @Binding in swiftUI ?
+### 9. What is @Binding in swiftUI ?
   - In SwiftUI, @Binding is a property wrapper used to create a two-way connection between a parent view and a child view.
