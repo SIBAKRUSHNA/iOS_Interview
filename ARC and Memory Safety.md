@@ -6,8 +6,8 @@
 ### 2. - How arc decide that this object not need long time ios swift?
    - It determines an object's lifetime by keeping track of its reference counts. ARC is mainly driven by the Swift compiler which inserts retain and release operations. At runtime, retain increments the reference count and release decrements it. When the reference count drops to zero, the object will be deallocated.
 
-### 3. 
-
+### 3. What is zombie object in swift ?
+   - Detection of Zombie Objects: When an object is deallocated from memory but still has a reference.
 ### 4. 
 
 ### 5. 
