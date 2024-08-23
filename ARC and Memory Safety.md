@@ -8,11 +8,15 @@
 
 ### 3. What is zombie object in swift ?
    - Detection of Zombie Objects: When an object is deallocated from memory but still has a reference.
-### 4. 
 
-### 5. 
+### 4. What is Strong Reference ?
+   - Strong reference means object keep alive in the memory.
 
-### 6. 
+### 5. What is weak Reference ?
+   - Weak reference means object doesn’t keep alive in the memory.
+     
+### 6. What is unowned Reference ?
+   -  Unowned reference means object doesn’t keep alive in the memory.
 
 ### 7.
 
