@@ -18,8 +18,11 @@
 ### 6. What is unowned Reference ?
    -  Unowned reference means object doesn’t keep alive in the memory.
 
-### 7.
-
+### 7. What is the difference between weak and unowned reference?
+  - Weak references are always optional and unowned references are always non-optional.
+  - Weak references are safer as they automatically become nil when the object is released. Unowned references 
+    can cause crashes if the object is destroyed
+    
 ### 8.
 
 ### 9.
