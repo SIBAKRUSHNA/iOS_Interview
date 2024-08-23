@@ -54,3 +54,8 @@ let user = getUser()
 print(user.name)  // "Alice"
 print(user.age)   // 30
  ```
+### 5. What is self and Self in swift?
+  - self :- self refers to the current instance, in the body of one of this method.
+  - Self :- Self is used to refer to the type of the current class, structure, enumeration with its own method or 
+    initializer.
+    
