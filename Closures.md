@@ -13,7 +13,7 @@
     ```
 
 ### 2. How many types of closure?
-`Auto closure`
+- `Auto closure`
     - An autoclosure is a closure that is automatically created to wrap an expression that’s passed as an argument to a 
       function.
   ```swift
@@ -24,7 +24,7 @@
            }
    logIfTrue(3 > 2)  // prints "True"
   ```
-`Trailing closure`
+- `Trailing closure`
     - Trailing closure is a syntactic convenience that allows you to write a closure expression outside of a function's parentheses when the closure is the last argument of the function.
 ```swift
     func performOperation(_ a: Int, _ b: Int, operation: (Int, Int) -> Int) -> Int {
@@ -44,7 +44,7 @@
   print(result)  // 8
   print(resultWithTrailingClosure)  // 8
 ```
-`Capture value`
+- `Capture value`
     - In Swift, capturing values refers to a closure’s ability to capture and store references to constants and variables from the surrounding context in which it is defined.
     
 ```swift
@@ -63,7 +63,7 @@ print(incrementByTwo())  // 2
 print(incrementByTwo())  // 4
 print(incrementByTwo())  // 6
 ```
-`Escaping closure`
+- `Escaping closure`
      - Closures passed as arguments to a function can be marked with @escaping if they need to escape the scope of the 
        function.
 ```swift
@@ -86,7 +86,7 @@ print("Task is still running...")
 // Call the stored closure manually later
 storedClosure?()
 ```
-`Non escaping closure`
+- `Non escaping closure`
     - A non-escaping closure in Swift is a closure that is guaranteed to be executed before the function it is passed to 
       returns.
 ```swift
