@@ -24,7 +24,9 @@
 ### 6. What is Autoresizing Masks?
    - Autoresizing masks define how a view resizes or moves in response to changes in its superview’s bounds.
      
-### 7.
+### 7. What is leading and trailing in Swift?
+  - `leading` - A view that appears on the leading edge of the title.
+  - `trailing`- A view that appears on the trailing edge of the title.
 
 ### 8.
 
