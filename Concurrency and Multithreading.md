@@ -1,6 +1,8 @@
 ## iOS Developers Interview Concurrency and Multithreading Questions
 
-### 1.
+### 1. What is multithreading?
+  - Multithreading in Swift allows you to perform multiple tasks simultaneously, which can help improve the performance and 
+   responsiveness of your application.
 
 ### 2.
 
