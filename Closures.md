@@ -14,8 +14,7 @@
 
 ### 2. How many types of closure?
 - `Auto closure`
-    - An autoclosure is a closure that is automatically created to wrap an expression that’s passed as an argument to a 
-      function.
+    - An autoclosure is a closure that is automatically created to wrap an expression that’s passed as an argument to a function.
       
   ```swift
            func logIfTrue(_ predicate: @autoclosure () -> Bool) {
@@ -25,8 +24,10 @@
            }
    logIfTrue(3 > 2)  // prints "True"
   ```
+  
 - `Trailing closure`
     - Trailing closure is a syntactic convenience that allows you to write a closure expression outside of a function's parentheses when the closure is the last argument of the function.
+      
 ```swift
     func performOperation(_ a: Int, _ b: Int, operation: (Int, Int) -> Int) -> Int {
     return operation(a, b)
