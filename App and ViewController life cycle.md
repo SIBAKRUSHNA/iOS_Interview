@@ -31,8 +31,12 @@
   `Suspended`
     -  When it's in the background and doesn't have any pending tasks to complete.
   
-### 3.
-
+### 3. What is the ViewController life cycle?
+`init`
+`loadView` 
+        - The view controller calls this method when its view property is requested but is currently nil
+        
+![](https://swiftacademy.ir/images/swift-learning/other/view-controller-lifecycle.jpg)
 ### 4.
 
 ### 5.
