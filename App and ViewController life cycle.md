@@ -68,7 +68,7 @@
 `viewWillTransition(to:with:)`
     - This method is called when the interface orientation changes.
     
-![](https://swiftacademy.ir/images/swift-learning/other/view-controller-lifecycle.jpg)
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*jb1Y17gwQCRi2XCKy7_QHQ.png)
 
 ### 4.
 
