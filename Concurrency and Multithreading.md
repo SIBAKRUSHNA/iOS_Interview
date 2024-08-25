@@ -47,7 +47,7 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
 }
 
 ```
-### 8.
+### 8. What is quality of services?
 
 ### 9.
 
