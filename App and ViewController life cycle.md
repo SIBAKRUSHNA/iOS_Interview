@@ -4,7 +4,14 @@
 
 ### 1. What is the application life cycle?
 ### `Delegate methods`
-  - 
+  - application:willFinishLaunchingWithOptions
+  - application:didFinishLaunchingWithOptions
+  - applicationWillEnterForeground
+  - applicationDidBecomeActive
+  - applicationWillResignActive
+  - applicationDidEnterBackground
+  - applicationWillTerminate
+    
 ### 2.
 
 ### 3.
