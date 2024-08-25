@@ -15,79 +15,79 @@
   - applicationWillTerminate
     
 ### 2. What are the application different state ?
-  `Not Running`
+  - `Not Running`
     - Either the application is not started or is terminated by system. 
     
-  `Inactive`
+  - `Inactive`
     - An application is running in the foreground but is not receiving any events. User interaction is not possible at this 
       time. This happens when a call or SMS is received.
       
-  `Active`
+  - `Active`
     - An application is running in the foreground and receiving the events. User interaction happens only in this state.
     
-  `Background`
+  - `Background`
     - An application is running in the background and executing the code.
   
-  `Suspended`
+  - `Suspended`
     -  When it's in the background and doesn't have any pending tasks to complete.
   
 ### 3. What is the ViewController life cycle?
-`init`
+- `init`
     - The view controller calls this method when an instance of the class is created.
     
-`loadView` 
+- `loadView` 
     - The view controller calls this method when its view property is requested but is currently nil
 
-`viewDidLoad`
+- `viewDidLoad`
     - This method is called after the view controller has loaded its view hierarchy into memory.
     
-`viewWillAppear`
+- `viewWillAppear`
     - This method is called before the view controller's view is about to be added to a view hierarchy.
     
-`viewWillLayoutSubviews`
+- `viewWillLayoutSubviews`
     - When its view is about to lay out its subviews.
     
-`viewDidLayoutSubviews`
+- `viewDidLayoutSubviews`
     - When its view finishes laying out its subviews.
     
-`viewDidAppear`
+- `viewDidAppear`
     - This method is called after the view controller's view is about to be added to a view hierarchy.
     
-`viewWillDisappear`
+- `viewWillDisappear`
     -  This method is called before the view controller's view is about to be removed to a view hierarchy.
     
-`viewDidDisappear`
+- `viewDidDisappear`
     -  This method is called after the view controller's view is about to be removed to a view hierarchy.
     
-`deinit`
+- `deinit`
     - Deinitializer is called immediately before a view controller's instance is deallocated.
     
-`didReceiveMemoryWarning`
+- `didReceiveMemoryWarning`
     -  This method is called when the system determines that the amount of available memory is low. 
     
-`viewWillTransition(to:with:)`
+- `viewWillTransition(to:with:)`
     - This method is called when the interface orientation changes.
     
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*jb1Y17gwQCRi2XCKy7_QHQ.png)
 
 ### 4. what are scene delegate methods?
-`scene(_:willConnectTo:options:)`
+- `scene(_:willConnectTo:options:)`
      - This method is called when a new window scene is about to connect.
      
-`sceneDidDisconnect(_:)`
+- `sceneDidDisconnect(_:)`
      - The scene that UIKit disconnected from your app.
      
-`sceneDidBecomeActive(_:)`
+- `sceneDidBecomeActive(_:)`
      - This method called when the scene has moved from an inactive state to an active state.
 
-`sceneWillResignActive(_:)`
+- `sceneWillResignActive(_:)`
      - This method is called right after the WillEnterForeground method and here the scene is set-up and visible and ready 
        to use
        
-`sceneWillEnterForeground(_:)`
+- `sceneWillEnterForeground(_:)`
      - This method is called when the window scene before moving a scene to the foreground.
      
-`sceneDidEnterBackground(_:)`
+- `sceneDidEnterBackground(_:)`
       - This method is called when the window scene enters the background.
       
 ### 5. What is the difference between screen delegate and app delegate?
