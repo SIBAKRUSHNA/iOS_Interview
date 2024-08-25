@@ -16,6 +16,8 @@
    - Hugging => Content does not want to grow.
    - Compression Resistance => Content does not want to shrink.
      
+     ![](https://miro.medium.com/v2/resize:fit:2000/1*rIGewLhCwKyVkbXuI-ar8g.png)
+     
 ### 5.
 
 ### 6.
