@@ -17,8 +17,17 @@
   - `Synchronous` - Synchronous execution means that tasks are performed sequentially. Each task must complete before the next one starts.
   - `Asynchronous` - Asynchronous execution allows tasks to run concurrently, meaning that other tasks can continue running without waiting for the current task to complete.
     
-### 6.
-
+### 6. What is async await?
+  - Async await is a mechanism used to create and execute asynchronous functions.
+    ```swift
+    func processData() async {
+    let data = await fetchData() // Wait for fetchData to complete
+    print("Data processed: \(data)")
+    }
+    Task {
+     await processData() // Call the asynchronous function
+    }
+    ```
 ### 7.
 
 ### 8.
