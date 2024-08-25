@@ -7,8 +7,8 @@
   - Size Classes are groups of screen sizes that are applied to the width and height of the device screen.
     
 ### 3. How many types of size class in swift?
-   `compact` - Compact means narrow space.
-   `regular` - Regular means wider space.
+   `Compact` - Compact means narrow space.
+   `Regular` - Regular means wider space.
 
    ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lOlo8WRtw-C37NSyZES5yQ.png)
 
