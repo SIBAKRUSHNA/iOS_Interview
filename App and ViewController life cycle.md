@@ -70,8 +70,11 @@
     
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*jb1Y17gwQCRi2XCKy7_QHQ.png)
 
-### 4.
+### 4. What is the difference between screen delegate and app delegate?
+   - The AppDelegate will be responsible for the application lifecycle and setup. The SceneDelegate will be responsible for what is shown on the screen (Windows or Scenes) handle and manage the way your app is shown.
 
+     ![](https://miro.medium.com/v2/resize:fit:1200/1*yVS3D4C3rlIVmVlro1pckw.png)
+     
 ### 5.
 
 ### 6.
