@@ -12,20 +12,24 @@
     let result = sumClosure(3, 5)
     ```
 
-### 2.
+### 2. How many types of closure?
+`Auto closure`
+    - An autoclosure is a closure that is automatically created to wrap an expression that’s passed as an argument to a 
+      function.
+      ```swift
+           func logIfTrue(_ predicate: @autoclosure () -> Bool) {
+                if predicate() {
+                print("True")
+              }
+           }
+   logIfTrue(3 > 2)  // prints "True"
+    ```
+`Trailing closure`
+`Capture value`
+`Escaping closure`
+`Non escaping closure`
 
-### 3.
-
-### 4.
-
-### 5.
-
-### 6.
-
-### 7.
-
-### 8.
-
-### 9.
-
-### 10.
+### 3. Closures are value type or reference type?
+  - Closures are reference types.
+    
+### 4. 
