@@ -3,7 +3,7 @@
 ![](https://miro.medium.com/v2/resize:fit:2000/1*09LWJWdZSuPrv15I16WYiw.png)
 
 ### 1. What is the application life cycle?
-`Delegate methods`
+### `Delegate methods`
   - 
 ### 2.
 
