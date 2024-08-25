@@ -31,10 +31,14 @@
 ### 8. What is left and right constraints?
   - Left and right constraints refer to constraints that specify the distances between the left and right edges of views or between a view and its superview.
     
-### 9. what is the difference between anchor and constraints ?
+### 9. What is the difference between anchor and constraints ?
   - `Anchors` - Anchors are properties of UIView (or its subclasses) that represent the edges and dimensions of a view.
   - `Constraints` - Constraints are the rules that define how views should be positioned and sized relative to each other or their superview.
     
-### 10.
+### 10. What is the difference between leading constraint and left constraint?
+  - `Leading Constraint` - A leading constraint defines the distance between the leading edge of a view and the leading edge of its container or another view.
+  - `Left Constraint` - A left constraint specifies the distance between the left edge of a view and the left edge of its container or another view.
 
-### 11.
+### 11. What is the difference between trailing constraint and right constraint?
+  - `Trailing Constraint` - A trailing constraint defines the distance between the trailing edge of a view and the trailing edge of its container or another view.
+  - `Right Constraint` - A right constraint specifies the distance between the right edge of a view and the right edge of its container or another view.
