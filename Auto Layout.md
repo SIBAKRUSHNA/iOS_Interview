@@ -28,8 +28,9 @@
   - `leading` - A view that appears on the leading edge of the title.
   - `trailing`- A view that appears on the trailing edge of the title.
 
-### 8.
-
+### 8. What is left and right constraints?
+  - Left and right constraints refer to constraints that specify the distances between the left and right edges of views or between a view and its superview.
+    
 ### 9.
 
 ### 10.
