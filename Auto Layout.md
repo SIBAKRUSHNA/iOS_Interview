@@ -12,8 +12,10 @@
 
    ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lOlo8WRtw-C37NSyZES5yQ.png)
 
-### 4.
-
+### 4. What is content hugging and content compression resistance priority?
+   - Hugging => Content does not want to grow.
+   - Compression Resistance => Content does not want to shrink.
+     
 ### 5.
 
 ### 6.
