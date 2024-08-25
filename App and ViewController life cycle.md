@@ -14,8 +14,13 @@
   - applicationDidEnterBackground
   - applicationWillTerminate
     
-### 2.
-
+### 2. What are the application different state ?
+  `Not Running`
+  `Inactive`
+  `Active`
+  `Background`
+  `Suspended`
+  
 ### 3.
 
 ### 4.
