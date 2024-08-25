@@ -1,6 +1,6 @@
 ## iOS Developers Interview App and ViewController life cycle Questions
 
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*8mQCVZJkQGBvvV8HEwnOPQ.jpeg)
+![](https://miro.medium.com/v2/resize:fit:2000/1*09LWJWdZSuPrv15I16WYiw.png)
 
 ### 1.
 
