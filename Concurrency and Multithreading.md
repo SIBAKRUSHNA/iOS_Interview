@@ -28,8 +28,25 @@
      await processData() // Call the asynchronous function
     }
     ```
-### 7.
+### 7. When to use dispatch barrier?
+  -  It ensures that the task you submit with the barrier flag will only execute after all previously submitted tasks on that queue have finished.
+```swift
+let queue = DispatchQueue(label: "com.example.queue", attributes: .concurrent)
+var sharedResource = [String]()
 
+func addToSharedResource(item: String) {
+    queue.async(flags: .barrier) {
+        sharedResource.append(item)
+    }
+}
+
+func readFromSharedResource(completion: @escaping ([String]) -> Void) {
+    queue.async {
+        completion(sharedResource)
+    }
+}
+
+```
 ### 8.
 
 ### 9.
