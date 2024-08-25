@@ -16,14 +16,14 @@
 `Auto closure`
     - An autoclosure is a closure that is automatically created to wrap an expression that’s passed as an argument to a 
       function.
-      ```swift
+  ```swift
            func logIfTrue(_ predicate: @autoclosure () -> Bool) {
                 if predicate() {
                 print("True")
               }
            }
    logIfTrue(3 > 2)  // prints "True"
-    ```
+  ```
 `Trailing closure`
 `Capture value`
 `Escaping closure`
