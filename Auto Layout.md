@@ -18,10 +18,12 @@
      
      ![](https://miro.medium.com/v2/resize:fit:2000/1*rIGewLhCwKyVkbXuI-ar8g.png)
      
-### 5.
-
-### 6.
-
+### 5. What is constraints in autolayout in swift?
+   - Constraints are rules that define how UI elements should be positioned and sized relative to each other and their container.
+     
+### 6. What is Autoresizing Masks?
+   - Autoresizing masks define how a view resizes or moves in response to changes in its superview’s bounds.
+     
 ### 7.
 
 ### 8.
