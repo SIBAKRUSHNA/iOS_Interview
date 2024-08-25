@@ -70,23 +70,28 @@
     
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*jb1Y17gwQCRi2XCKy7_QHQ.png)
 
-### 4. what are scene delegate methods ?
+### 4. what are scene delegate methods?
+`scene(_:willConnectTo:options:)`
+     - This method is called when a new window scene is about to connect.
      
+`sceneDidDisconnect(_:)`
+     - The scene that UIKit disconnected from your app.
+     
+`sceneDidBecomeActive(_:)`
+     - This method called when the scene has moved from an inactive state to an active state.
+
+`sceneWillResignActive(_:)`
+     - This method is called right after the WillEnterForeground method and here the scene is set-up and visible and ready 
+       to use
+       
+`sceneWillEnterForeground(_:)`
+     - This method is called when the window scene before moving a scene to the foreground.
+     
+`sceneDidEnterBackground(_:)`
+      - This method is called when the window scene enters the background.
+      
 ### 5. What is the difference between screen delegate and app delegate?
    - The AppDelegate will be responsible for the application lifecycle and setup. The SceneDelegate will be responsible for what is shown on the screen (Windows or Scenes) handle and manage the way your app is shown.
 
      ![](https://miro.medium.com/v2/resize:fit:1200/1*yVS3D4C3rlIVmVlro1pckw.png)
      
-### 5.
-
-### 6.
-
-### 7.
-
-### 8.
-
-### 9.
-
-### 10.
-
-### 11.
