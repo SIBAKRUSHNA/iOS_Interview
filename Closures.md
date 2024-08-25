@@ -25,6 +25,25 @@
    logIfTrue(3 > 2)  // prints "True"
   ```
 `Trailing closure`
+    - Trailing closure is a syntactic convenience that allows you to write a closure expression outside of a function's parentheses when the closure is the last argument of the function.
+```swift
+    func performOperation(_ a: Int, _ b: Int, operation: (Int, Int) -> Int) -> Int {
+    return operation(a, b)
+}
+
+  // Using a normal closure syntax
+   let result = performOperation(3, 5, operation: { (a, b) in
+    return a + b
+    })
+
+   // Using trailing closure syntax
+    let resultWithTrailingClosure = performOperation(3, 5) { (a, b) in
+       return a + b
+   }
+
+  print(result)  // 8
+  print(resultWithTrailingClosure)  // 8
+```
 `Capture value`
 `Escaping closure`
 `Non escaping closure`
