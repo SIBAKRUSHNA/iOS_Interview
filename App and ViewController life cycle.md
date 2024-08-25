@@ -16,10 +16,20 @@
     
 ### 2. What are the application different state ?
   `Not Running`
+    - Either the application is not started or is terminated by system. 
+    
   `Inactive`
+    - An application is running in the foreground but is not receiving any events. User interaction is not possible at this 
+      time. This happens when a call or SMS is received.
+      
   `Active`
+    - An application is running in the foreground and receiving the events. User interaction happens only in this state.
+    
   `Background`
+    - An application is running in the background and executing the code.
+  
   `Suspended`
+    -  When it's in the background and doesn't have any pending tasks to complete.
   
 ### 3.
 
