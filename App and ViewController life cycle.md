@@ -33,10 +33,43 @@
   
 ### 3. What is the ViewController life cycle?
 `init`
+    - The view controller calls this method when an instance of the class is created.
+    
 `loadView` 
-        - The view controller calls this method when its view property is requested but is currently nil
-        
+    - The view controller calls this method when its view property is requested but is currently nil
+
+`viewDidLoad`
+    - This method is called after the view controller has loaded its view hierarchy into memory.
+    
+`viewWillAppear`
+    - This method is called before the view controller's view is about to be added to a view hierarchy.
+    
+`viewWillLayoutSubviews`
+    - When its view is about to lay out its subviews.
+    
+`viewDidLayoutSubviews`
+    - When its view finishes laying out its subviews.
+    
+`viewDidAppear`
+    - This method is called after the view controller's view is about to be added to a view hierarchy.
+    
+`viewWillDisappear`
+    -  This method is called before the view controller's view is about to be removed to a view hierarchy.
+    
+`viewDidDisappear`
+    -  This method is called after the view controller's view is about to be removed to a view hierarchy.
+    
+`deinit`
+    - Deinitializer is called immediately before a view controller's instance is deallocated.
+    
+`didReceiveMemoryWarning`
+    -  This method is called when the system determines that the amount of available memory is low. 
+    
+`viewWillTransition(to:with:)`
+    - This method is called when the interface orientation changes.
+    
 ![](https://swiftacademy.ir/images/swift-learning/other/view-controller-lifecycle.jpg)
+
 ### 4.
 
 ### 5.
