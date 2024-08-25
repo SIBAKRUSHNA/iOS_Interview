@@ -31,8 +31,10 @@
 ### 8. What is left and right constraints?
   - Left and right constraints refer to constraints that specify the distances between the left and right edges of views or between a view and its superview.
     
-### 9.
-
+### 9. what is the difference between anchor and constraints ?
+  - `Anchors` - Anchors are properties of UIView (or its subclasses) that represent the edges and dimensions of a view.
+  - `Constraints` - Constraints are the rules that define how views should be positioned and sized relative to each other or their superview.
+    
 ### 10.
 
 ### 11.
