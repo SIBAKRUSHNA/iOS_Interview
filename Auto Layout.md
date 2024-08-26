@@ -42,3 +42,12 @@
 ### 11. What is the difference between trailing constraint and right constraint?
   - `Trailing Constraint` - A trailing constraint defines the distance between the trailing edge of a view and the trailing edge of its container or another view.
   - `Right Constraint` - A right constraint specifies the distance between the right edge of a view and the right edge of its container or another view.
+
+### 12. What is the differences between frame and bounds?
+ - `bounds`
+       -  The bounds of an UIView is the rectangle, expressed as a location (x,y) and size 
+          (width,height) relative to its own coordinate system (0,0).
+
+- `frame`
+       - The frame of an UIView is the rectangle, expressed as a location (x,y) and size 
+         (width,height) relative to the superview it is contained within.
