@@ -114,3 +114,28 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
     
 ### 19. What is actor in swift?
   - In Swift, an actor is a reference type that was introduced in Swift 5.5 as part of its advanced concurrency model.
+
+``` swift
+actor Counter {
+    private var count = 0
+    
+    func increment() {
+        count += 1
+    }
+    
+    func getCount() -> Int {
+        return count
+    }
+}
+let counter = Counter()
+
+Task {
+    // Increment the count
+    await counter.increment()
+    await counter.increment()
+
+    // Get the current count
+    let currentCount = await counter.getCount()
+    print("Current count: \(currentCount)") // Output: Current count: 2
+}
+```
