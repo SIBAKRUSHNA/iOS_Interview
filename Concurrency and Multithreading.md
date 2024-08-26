@@ -48,6 +48,8 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
 
 ```
 ### 8. What is quality of services?
+- The quality of service, or the execution priority, to apply to tasks. It allows you to manage the execution priority of tasks in your app.
+  
  - `userInteractive`
     - Priority: Highest
     - Purpose: For tasks that must be done immediately to keep the app responsive.
