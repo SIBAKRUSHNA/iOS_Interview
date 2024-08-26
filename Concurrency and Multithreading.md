@@ -90,4 +90,7 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
     shared resources at the same time, leading to unpredictable behaviour.
 
 ### 12. What is the difference between DispatchQueue sync vs sync barrier in concurrent queue?
-  - 
+   - 
+
+### 13. What is the difference between DispatchQueue async vs async barrier in concurrent queue?
+   - 
