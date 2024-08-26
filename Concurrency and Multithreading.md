@@ -112,3 +112,5 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
   - `Nonatomic` - Nonatomic means multiple threads access the variable (dynamic type). 
                   Nonatomic is thread-unsafe, but it is fast.
     
+### 19. What is actor in swift?
+  - In Swift, an actor is a reference type that was introduced in Swift 5.5 as part of its advanced concurrency model.
