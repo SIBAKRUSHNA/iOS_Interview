@@ -88,4 +88,6 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
 ### 11. What is a Race Condition?
   - A race condition in iOS app development happens when two or more tasks try to access 
     shared resources at the same time, leading to unpredictable behaviour.
-    
+
+### 12. What is the difference between DispatchQueue sync vs sync barrier in concurrent queue?
+  - 
