@@ -58,3 +58,18 @@ numbers.forEach { print($0) }
 let numbers = [1, 2, 3, 4]
 let hasEven = numbers.contains { $0 % 2 == 0 }
 ```
+
+- `sorted`
+   - Returns a new collection sorted using a provided closure.
+ 
+```swift
+let numbers = [3, 1, 4, 2]
+let sortedNumbers = numbers.sorted { $0 < $1 }
+```
+- `allSatisfy`
+  - Checks if all elements in a collection satisfy a given predicate.
+
+```swift
+let numbers = [2, 4, 6]
+let allEven = numbers.allSatisfy { $0 % 2 == 0 }
+```
