@@ -19,6 +19,18 @@
 - `Reference Types`
      - Value types are types where each instance keeps a unique copy of its data.
      - Classes (class): Classes in Swift are reference types.
+       
 - `Value Types`
      -  Reference types are types where instances share a single copy of the data.
      -  Structures (struct): Structures in Swift are value types.
+       
+### 3. What is difference between enumerations and structures?
+- `Enumerations`
+     - Enums are used to define a type that can have one of a limited set of possible values. They are often used to represent a discrete set of 
+       related values, such as options or states.
+     - Commonly used for defining states, categories, or options, such as days of the week, direction (north, south, east, west), or error codes.
+       
+- `Structures`
+     - Structs are used to define complex data types that group related data together. They can store multiple values and encapsulate related 
+       functionality.
+     - Commonly used for modeling real-world entities with multiple properties, such as coordinates, shapes, or user data.
