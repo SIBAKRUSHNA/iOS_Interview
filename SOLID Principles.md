@@ -14,6 +14,6 @@
  - `Interface Segregation Principle`
     - Client should not be forced to depend upon interfaces that they do not use.
 
- - `Dependency Inversion Principle`
+ - `Dependency Inversion Principle`
     - High level modules should not depend upon low level modules. Both should depend upon abstractions.
     - Abstractions should not depend upon details. Details should depend upon abstractions.
