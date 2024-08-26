@@ -89,8 +89,11 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
   - A race condition in iOS app development happens when two or more tasks try to access 
     shared resources at the same time, leading to unpredictable behaviour.
 
-### 12. What is the difference between DispatchQueue sync vs sync barrier in concurrent queue?
+### 12 What is thread safe in swift ?
+  -  Multiple threads can access shared resources (like variables, objects, or data structures) without causing data corruption or inconsistencies.
+    
+### 13. What is the difference between DispatchQueue sync vs sync barrier in concurrent queue?
    - 
 
-### 13. What is the difference between DispatchQueue async vs async barrier in concurrent queue?
+### 14. What is the difference between DispatchQueue async vs async barrier in concurrent queue?
    - 
