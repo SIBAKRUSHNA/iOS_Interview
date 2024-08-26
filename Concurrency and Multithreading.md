@@ -77,9 +77,15 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
     - Purpose: For tasks that the user isn't directly aware of and can be done when the system has resources available.
     - Example: Syncing data or performing backup
   
-### 9.
+### 9. What is a Deadlock?
+  - Deadlock occurs when two or more threads are blocked  unspecified period of time., waiting for each other to release a resource.
+    
+### 10. How to avoid deadlock situation?
+  - Use higher-level synchronization mechanisms provided by GCD (Grand Central Dispatch) and NSOperationQueue.
+  - Avoid Synchronous Calls on the Main Queue.
+  - Avoid Nested Synchronous Calls Across Different Queues
 
-### 10.
-
-### 11.
-
+### 11. What is a Race Condition?
+  - A race condition in iOS app development happens when two or more tasks try to access 
+    shared resources at the same time, leading to unpredictable behaviour.
+    
