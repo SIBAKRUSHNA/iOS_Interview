@@ -119,4 +119,44 @@ class BirdISP: Runnable, Flyable {
     - Abstractions should not depend upon details. Details should depend upon abstractions.
 
 ```swift
+// Protocol for abstraction
+protocol NotificationService {
+    func send(message: String)
+}
+
+// Low-level module: EmailService conforms to NotificationService
+class EmailService: NotificationService {
+    func send(message: String) {
+        print("Sending email with message: \(message)")
+    }
+}
+
+// Low-level module: SMSService conforms to NotificationService
+class SMSService: NotificationService {
+    func send(message: String) {
+        print("Sending SMS with message: \(message)")
+    }
+}
+
+// High-level module
+class NotificationManager {
+    private let service: NotificationService
+    
+    init(service: NotificationService) {
+        self.service = service
+    }
+    
+    func sendNotification(message: String) {
+        service.send(message: message)
+    }
+}
+
+// Usage
+let emailService: NotificationService = EmailService()
+let smsService: NotificationService = SMSService()
+let emailNotificationManager = NotificationManager(service: emailService)
+let smsNotificationManager = NotificationManager(service: smsService)
+
+emailNotificationManager.sendNotification(message: "Hello via Email!")  // Output: Sending email with message: Hello via Email!
+smsNotificationManager.sendNotification(message: "Hello via SMS!")      // Output: Sending SMS with message: Hello via SMS!
 ```
