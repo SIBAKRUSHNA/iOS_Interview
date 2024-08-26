@@ -106,3 +106,12 @@ performOperation {
 ```
 ### 3. Closures are value type or reference type?
   - Closures are reference types.
+
+### 4. What is capture list in closures?
+  - A capture list is defined within square brackets [] just before the parameter list of a closure. It consists of one or more pairs of variables and their capture rules (such as weak or unowned).
+
+```swift
+{ [captureList] (parameters) -> returnType in
+    // closure body
+}
+```
