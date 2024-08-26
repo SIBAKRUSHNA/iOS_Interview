@@ -102,3 +102,6 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
 
 ### 16. How to cancel a thread in swift?
    - Using dispatch queue cancel method.
+     
+### 17. What is dispatchGroup?
+   - A group of tasks that you monitor as a single unit.
