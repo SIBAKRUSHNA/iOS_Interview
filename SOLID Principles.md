@@ -53,6 +53,36 @@ class Intern: Employee {
     - Function that use references to base class must be able to use objects of derived classes without knowing it.
 
 ```swift
+// Define a base protocol for all payment methods
+protocol PaymentMethod {
+    func processPayment(amount: Double)
+}
+
+// Subclass for credit card payments, conforms to PaymentMethod
+class CreditCard: PaymentMethod {
+    func processPayment(amount: Double) {
+        print("Processing credit card payment of $\(amount)")
+    }
+}
+
+// Subclass for cash payments, conforms to PaymentMethod
+class Cash: PaymentMethod {
+    func processPayment(amount: Double) {
+        print("Processing cash payment of $\(amount)")
+    }
+}
+
+// Function that expects any payment method to process payment
+func pay(bill: PaymentMethod, amount: Double) {
+    bill.processPayment(amount: amount)
+}
+
+// Example usage
+let creditCardPayment = CreditCard()
+let cashPayment = Cash()
+
+pay(bill: creditCardPayment, amount: 100.0)  // Output: "Processing credit card payment of $100.0"
+pay(bill: cashPayment, amount: 50.0)         // Output: "Processing cash payment of $50.0"
 ```
 
  - `Interface Segregation Principle`
