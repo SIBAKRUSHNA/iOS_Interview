@@ -14,8 +14,10 @@
   - NSOperation is a class in Swift used for managing and executing operations concurrently.
 
 ### 5. What is synchronous and asynchronous? 
-  - `Synchronous` - Synchronous execution means that tasks are performed sequentially. Each task must complete before the next one starts.
-  - `Asynchronous` - Asynchronous execution allows tasks to run concurrently, meaning that other tasks can continue running without waiting for the current task to complete.
+  - `Synchronous`
+        - Synchronous execution means that tasks are performed sequentially. Each task must complete before the next one starts.
+  - `Asynchronous`
+        - Asynchronous execution allows tasks to run concurrently, meaning that other tasks can continue running without waiting for the current task to complete.
     
 ### 6. What is async await?
   - Async await is a mechanism used to create and execute asynchronous functions.
