@@ -5,6 +5,22 @@
  - `Single Responsibility Principle`
     - There should never be more than one reason for a class to be change.
 ```swift
+class User {
+    var name: String
+    var email: String
+    
+    init(name: String, email: String) {
+        self.name = name
+        self.email = email
+    }
+}
+
+class UserValidator {
+    func isValidEmail(_ email: String) -> Bool {
+        // Email validation logic
+        return email.contains("@")
+    }
+}
 ```
 
  - `Open-Closed Principle`
