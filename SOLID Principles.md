@@ -26,6 +26,28 @@ class UserValidator {
  - `Open-Closed Principle`
     - Software entities (Class. Modules, Functions etc) should open for extension but close for modification. 
 ```swift
+// After: Extending functionality through subclasses
+protocol Employee {
+    func calculateSalary() -> Double
+}
+
+class FullTimeEmployee: Employee {
+    func calculateSalary() -> Double {
+        return 3000
+    }
+}
+
+class PartTimeEmployee: Employee {
+    func calculateSalary() -> Double {
+        return 1500
+    }
+}
+
+// Adding a new type of employee
+class Intern: Employee {
+    func calculateSalary() -> Double {
+        return 800
+    }
 ```
 
  - `Liskov Substitution Principle`
