@@ -61,15 +61,15 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
     - Purpose: The system decides the priority. Use when you don't have specific requirements.
     - Example: Legacy code or when no priority is needed.
 - `default`
-    - Priority: Normal
+    - Priority: Not set
     - Purpose: For general tasks that don't need to be completed immediately but should still be done soon.
     - Example: Standard app operations that aren't time-sensitive.
 - `utility`
-    - Priority: Low
+    - Priority: Medium
     - Purpose: For tasks that take longer and don't need to be completed right away.
     - Example: Downloading files or processing large amounts of data.
 - `background`
-    - Priority: Lowest
+    - Priority: Low
     - Purpose: For tasks that the user isn't directly aware of and can be done when the system has resources available.
     - Example: Syncing data or performing backup
   
