@@ -105,3 +105,10 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
      
 ### 17. What is dispatchGroup?
    - A group of tasks that you monitor as a single unit.
+
+### 18. What is atomic and non-atomic in swift?
+  - `Atomic` - Atomic means only one thread accesses the variable (static type). Atomic is 
+               thread-safe, but it is slow.
+  - `Nonatomic` - Nonatomic means multiple threads access the variable (dynamic type). 
+                  Nonatomic is thread-unsafe, but it is fast.
+    
