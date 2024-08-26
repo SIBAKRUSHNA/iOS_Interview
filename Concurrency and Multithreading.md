@@ -99,3 +99,6 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
    - 
 ### 15. What is semaphore in swift?
    - Semaphore is a synchronization mechanism used to manage access to a shared resource by multiple threads.
+
+### 16. How to cancel a thread in swift?
+   - Using dispatch queue cancel method.
