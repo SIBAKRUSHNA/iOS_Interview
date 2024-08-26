@@ -48,30 +48,30 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
 
 ```
 ### 8. What is quality of services?
-  - `userInteractive`
- - Priority: Highest
- - Purpose: For tasks that must be done immediately to keep the app responsive.
- - Example: Handling a button tap or updating the screen.
-  - `userInitiated`
-- Priority: High
-- Purpose: For tasks that the user expects to be completed quickly but aren't as urgent as UI updates.
-- Example: Loading content after the user requests it.
-  - `unspecified`
-- Priority: Not set
-- Purpose: The system decides the priority. Use when you don't have specific requirements.
-- Example: Legacy code or when no priority is needed.
-  - `default`
-- Priority: Normal
-- Purpose: For general tasks that don't need to be completed immediately but should still be done soon.
-- Example: Standard app operations that aren't time-sensitive.
-  - `utility`
-- Priority: Low
-- Purpose: For tasks that take longer and don't need to be completed right away.
-- Example: Downloading files or processing large amounts of data.
-  - `background`
-- Priority: Lowest
-- Purpose: For tasks that the user isn't directly aware of and can be done when the system has resources available.
-- Example: Syncing data or performing backup
+ - `userInteractive`
+    - Priority: Highest
+    - Purpose: For tasks that must be done immediately to keep the app responsive.
+    - Example: Handling a button tap or updating the screen.
+- `userInitiated`
+    - Priority: High
+    - Purpose: For tasks that the user expects to be completed quickly but aren't as urgent as UI updates.
+    - Example: Loading content after the user requests it.
+- `unspecified`
+    - Priority: Not set
+    - Purpose: The system decides the priority. Use when you don't have specific requirements.
+    - Example: Legacy code or when no priority is needed.
+- `default`
+    - Priority: Normal
+    - Purpose: For general tasks that don't need to be completed immediately but should still be done soon.
+    - Example: Standard app operations that aren't time-sensitive.
+- `utility`
+    - Priority: Low
+    - Purpose: For tasks that take longer and don't need to be completed right away.
+    - Example: Downloading files or processing large amounts of data.
+- `background`
+    - Priority: Lowest
+    - Purpose: For tasks that the user isn't directly aware of and can be done when the system has resources available.
+    - Example: Syncing data or performing backup
   
 ### 9.
 
