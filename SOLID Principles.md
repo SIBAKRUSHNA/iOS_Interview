@@ -26,7 +26,6 @@ class UserValidator {
  - `Open-Closed Principle`
     - Software entities (Class. Modules, Functions etc) should open for extension but close for modification. 
 ```swift
-// After: Extending functionality through subclasses
 protocol Employee {
     func calculateSalary() -> Double
 }
@@ -60,6 +59,29 @@ class Intern: Employee {
     - Client should not be forced to depend upon interfaces that they do not use.
 
 ```swift
+protocol Runnable {
+    func run()
+}
+
+protocol Flyable {
+    func fly()
+}
+
+class DogISP: Runnable {
+    func run() {
+        print("Dog is running")
+    }
+}
+
+class BirdISP: Runnable, Flyable {
+    func run() {
+        print("Bird is running")
+    }
+    
+    func fly() {
+        print("Bird is flying")
+    }
+}
 ```
 
  - `Dependency Inversion Principle`
