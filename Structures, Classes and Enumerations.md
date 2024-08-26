@@ -34,3 +34,9 @@
      - Structs are used to define complex data types that group related data together. They can store multiple values and encapsulate related 
        functionality.
      - Commonly used for modeling real-world entities with multiple properties, such as coordinates, shapes, or user data.
+
+### 4. What is associated values enum swift?
+  -  Associated values allow you to store additional data alongside each case in an enumeration
+
+### 5. What caseiterable enum swift?
+  - CaseIterable protocol that automatically generates an array property of all cases in an enum.
