@@ -15,10 +15,18 @@
      - Increased complexity and risk: It can introduce tight coupling and hidden dependencies in code.
      - Violates Single Responsibility Principle: Singleton design pattern can violate the Single Responsibility Principle.
 
-### 4.
+### 4. What is MVC Architecture in iOS?
+ - `Model` - Models are representations of your your app’s data.
+ - `View` - Views are objects that users of your app can see and interact with. View objects should be reusable and flexible.
+ - `Controller` - Controllers mediate between the View and the Model.
+   
+### 5. What is MVVM Architecture in iOS?
+ - `Model`
+ - `View`
+ - `ViewModel`
 
-### 5.
-
+ ![](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*j_a2nAVjuvTBoQuXV7MAHw.png)
+   
 ### 6.
 
 ### 7.
