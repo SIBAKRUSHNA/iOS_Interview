@@ -22,7 +22,47 @@
   - Weak references are always optional and unowned references are always non-optional.
   - Weak references are safer as they automatically become nil when the object is released. Unowned references 
     can cause crashes if the object is destroyed
-    
+```swift
+import Foundation
+
+class Owner {
+    var child: Child?
+
+    func createChild() {
+        child = Child(owner: self)
+    }
+}
+
+class Child {
+    unowned var owner: Owner
+
+    init(owner: Owner) {
+        self.owner = owner
+    }
+
+    func doSomething() {
+        print("Owner's reference is \(owner)")
+    }
+}
+
+func testUnownedReference() {
+    var owner: Owner? = Owner()
+    owner?.createChild()
+
+    // Access the child and perform an operation
+    owner?.child?.doSomething()
+
+    // Now deallocate the owner
+    owner = nil
+
+    // The owner has been deallocated, but the child still has an unowned reference to it.
+    // Trying to access the owner through the child will now cause a crash.
+    // Uncomment the following line to see the crash:
+    // owner?.child?.doSomething()
+}
+
+testUnownedReference()
+```
 ### 8. what is retain cycle?
    - A retain cycle occurs in Swift when two or more objects hold strong references to each other, preventing 
      them from being deallocated.
