@@ -15,3 +15,8 @@
    - willDisplayCell:forRowAtIndexPath
    - hightForHeaderInSection
    - hightForFooterInSection
+
+### 3. Why we are use reuse identifier in table view cell?
+  - A string identifying the cell object to be reused. This parameter must not be nil.
+
+### 4. How to reload tableview without using reload method?
