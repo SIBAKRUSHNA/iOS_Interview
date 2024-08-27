@@ -19,13 +19,15 @@
  - `Model` - Models are representations of your your app’s data.
  - `View` - Views are objects that users of your app can see and interact with. View objects should be reusable and flexible.
  - `Controller` - Controllers mediate between the View and the Model.
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MQxIn8fG3UrLxqy4Q_dR_w.png)
    
 ### 5. What is MVVM Architecture in iOS?
- - `Model`
- - `View`
- - `ViewModel`
+ - `Model` - Models are classes or structures that hold data.
+ - `View` - Views refer to the UI elements which show data to the users and take data from the users.
+ - `View-Model` - View-Model is the mediatory layer between model and view.
 
- ![](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*j_a2nAVjuvTBoQuXV7MAHw.png)
+ ![](https://i.sstatic.net/AIPW4.png)
    
 ### 6.
 
