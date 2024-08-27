@@ -12,3 +12,6 @@ var number = 10
 increment(&number)
 print(number)  // Output: 11
 ```
+
+### 2. What is difference between function and method?
+  - A method is a function that is associated with a type, that is, a class, a struct, or an enum. This means that every method is a function, but not every function is a method.
