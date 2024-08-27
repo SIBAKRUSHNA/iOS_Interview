@@ -9,4 +9,9 @@
   - canMoveRowAtIndexPath
 
 ### 2. What are table view delegate methods ?
-   
+   - willSelectRowAtIndexPath
+   - didSelectRowAtIndexPath
+   - hightForRowAtIndexPath
+   - willDisplayCell:forRowAtIndexPath
+   - hightForHeaderInSection
+   - hightForFooterInSection
