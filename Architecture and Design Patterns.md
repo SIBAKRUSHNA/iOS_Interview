@@ -3,8 +3,9 @@
 ### 1. What is delegate? 
   - Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.
     
-### 2.
-
+### 2. What is singleton design pattern?
+  - Singleton is a design pattern that ensures a class can have only one object.
+    
 ### 3.
 
 ### 4.
