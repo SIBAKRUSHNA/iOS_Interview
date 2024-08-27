@@ -5,3 +5,6 @@
 - `Convenience Initializer`
 - `Required Initializer` 
 - `Failable Initializer`
+
+### 2. What is Initializer Delegation?
+  - Initializer can call other initializer to perform part of initialization, this process is known as initializer delegation.
