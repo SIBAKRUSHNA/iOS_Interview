@@ -14,3 +14,6 @@
 
 ### 5. Difference between NSArray and NSMutableArray in ios swift?
   - NSArray creates static arrays, while NSMutableArray creates dynamic arrays
+
+### 6. What is mutable array and immutable array in swift?
+  - If you declare an array with var, it's mutable, which means you can add or remove elements. Conversely, if you declare an array with let, it's immutable, meaning its size and contents can't be changed after it's created
