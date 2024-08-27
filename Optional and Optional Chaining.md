@@ -12,4 +12,11 @@
 ### 4. What is optional chaining?
   - Optional chaining is a process in which is used to call properties, methods and subscripts of an optional that might currently be nil.
     
-### 5.
+### 5. Optional internal implementation.
+
+```swift
+enum Optional<Wrapped> {
+    case none
+    case some(Wrapped)
+}
+```
