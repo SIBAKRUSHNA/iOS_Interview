@@ -11,3 +11,6 @@
 
 ### 4. Can i use .last in dictionary and set?
   - No, Can not use .last
+
+### 5. Difference between NSArray and NSMutableArray in ios swift?
+  - NSArray creates static arrays, while NSMutableArray creates dynamic arrays
