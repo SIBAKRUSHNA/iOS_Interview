@@ -1,7 +1,8 @@
 ## iOS Developers Interview Architecture and Design Patterns Questions
 
-### 1.
-
+### 1. What is delegate? 
+  - Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.
+    
 ### 2.
 
 ### 3.
