@@ -8,3 +8,6 @@
     
 ### 3. What is Dictionary?
   - Dictionaries are unordered collections of key-value associations.
+
+### 4. Can i use .last in dictionary and set?
+  - No, Can not use .last
