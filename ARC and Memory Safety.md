@@ -20,8 +20,8 @@
 
 ### 7. What is the difference between weak and unowned reference?
   - Weak references are always optional and unowned references are always non-optional.
-  - Weak references are safer as they automatically become nil when the object is released. Unowned references 
-    can cause crashes if the object is destroyed
+  - Weak references are safer as they automatically become nil when the object is deallocated. Unowned references 
+    can cause crashes if the object is deallocated.
 ```swift
 import Foundation
 
