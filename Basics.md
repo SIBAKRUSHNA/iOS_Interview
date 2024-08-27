@@ -64,3 +64,9 @@ print(user.age)   // 30
 
 ### 7. What is mutating keyword in Swift?
   - The property of value type can not be modified within its instance method by default.
+
+### 8. What is Any in swift?
+  - Any can represent an instance of any type at all, including function types.
+
+### 9. What is AnyObject in swift ?
+  - AnyObject can represent an instance of any class type.
