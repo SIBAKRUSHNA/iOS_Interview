@@ -58,4 +58,9 @@ print(user.age)   // 30
   - self :- self refers to the current instance, in the body of one of this method.
   - Self :- Self is used to refer to the type of the current class, structure, enumeration with its own method or 
     initializer.
-    
+
+### 6. What is defer keyword in Swift?
+  - Defer is a keyword that declares a block of code that will only be expected when execution leaves the current scope.
+
+### 7. What is mutating keyword in Swift?
+  - The property of value type can not be modified within its instance method by default.
