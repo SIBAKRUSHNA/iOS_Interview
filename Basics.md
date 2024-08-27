@@ -1,4 +1,5 @@
-   ##                                              iOS Developers Interview Basics Questions
+   ## iOS Developers Interview Basics Questions
+   
 ### 1. What’s the difference between var and let? Which one would you choose for properties in a struct and why?
   - var is used to declare variables whose values can change after they are initially set. You can reassign a new value to a var property.
   - let is used to declare constants whose values cannot change once they are assigned. Once a value is set for a let property, it cannot be 
@@ -70,3 +71,6 @@ print(user.age)   // 30
 
 ### 9. What is AnyObject in swift ?
   - AnyObject can represent an instance of any class type.
+
+### 10. What is use of the static keyword in swift?
+  - The Static keyword makes it easier to utilize an objects properties or methods without the need of managing instances. Use of the Static keyword in the Singleton pattern can reduce memory leaks by mismanaging instances of classes.
