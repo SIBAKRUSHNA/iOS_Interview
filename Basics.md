@@ -74,3 +74,6 @@ print(user.age)   // 30
 
 ### 10. What is use of the static keyword in swift?
   - The Static keyword makes it easier to utilize an objects properties or methods without the need of managing instances. Use of the Static keyword in the Singleton pattern can reduce memory leaks by mismanaging instances of classes.
+
+### 11. What is type inference in Swift?
+  - Type inference is a compiler feature that automatically deduces the data type of an expression in code.
