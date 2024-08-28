@@ -1,9 +1,9 @@
 ## iOS Developers Interview Properties Questions
 
-### 1. What is computed stored property?
+### 1. What is stored property?
   - Stored property is a constant or variable that is stored a part of an instance in a particular class or structure.
     
-### 2. What is computed property property?
+### 2. What is computed property?
   - Computed property, which do not store actually store the value. Instead they provide a get and  set to retrieve and set other property and indirectly.
 
 ### 3. What is lazy property?
