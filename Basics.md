@@ -77,3 +77,8 @@ print(user.age)   // 30
 
 ### 11. What is type inference in Swift?
   - Type inference allows you to declare a variable or constant without explicitly specifying its data type.
+
+### 12. What is difference between static and dynamic library in in swift?
+  - Static libraries provide simplicity, performance, and code protection.
+  - While dynamic libraries offer code sharing, versioning flexibility, and dynamic loading capabilities.
+
