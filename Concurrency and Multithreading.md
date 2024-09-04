@@ -139,3 +139,6 @@ Task {
     print("Current count: \(currentCount)") // Output: Current count: 2
 }
 ```
+### 20. 
+  - Use GCD when you need a lightweight and efficient way to perform simple asynchronous tasks.
+  - Use Operation Queue when you require more control over task dependencies, cancellation, or need to encapsulate tasks as Operation objects.
