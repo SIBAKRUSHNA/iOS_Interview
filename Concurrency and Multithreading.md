@@ -142,3 +142,13 @@ Task {
 ### 20. What difference between GCD and operation queue Swift?
   - Use GCD when you need a lightweight and efficient way to perform simple asynchronous tasks.
   - Use Operation Queue when you require more control over task dependencies, cancellation, or need to encapsulate tasks as Operation objects.
+
+### 21. What is the difference between async/await and Actor?
+- `Async/await:`
+    - Focuses on managing asynchronous operations by making them easier to read and write.
+    - Does not inherently prevent race conditions or handle thread safety.
+    - Provides a way to "pause" and "resume" tasks in a non-blocking way.
+- `Actors:`
+    - Focuses on ensuring thread safety by serializing access to its mutable state.
+    - Helps prevent race conditions without requiring explicit locking.
+    - Can have async methods, so they often work in combination with async/await.
