@@ -13,4 +13,7 @@
   - Caching once the property is initialized, its value is cached for subsequent accesses, improving performance and reducing memory usage.
 
 ### 5. What is the disadvantage of lazy property?
-  - There is no guarantee that the property will be initialized only. 
+  - There is no guarantee that the property will be initialized only.
+    
+### 6. What is property wrapper?
+  - A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property.
