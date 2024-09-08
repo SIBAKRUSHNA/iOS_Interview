@@ -99,3 +99,5 @@ let userManager = UserManager()
 // Inject the dependency via method
 userManager.saveUserData(data: "User info", using: databaseService) // Output: Data saved: User info
 ```
+### 3. What is Swinject?
+  - Swinject is a lightweight and flexible dependency injection framework for Swift. It provides a way to manage the dependencies between objects, making your code more modular and easier to test. By using Swinject, you can decouple components in your application, leading to cleaner and more maintainable code
