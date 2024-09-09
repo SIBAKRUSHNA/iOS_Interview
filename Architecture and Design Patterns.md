@@ -14,6 +14,8 @@
 - `Disadvantages`
      - Increased complexity and risk: It can introduce tight coupling and hidden dependencies in code.
      - Violates Single Responsibility Principle: Singleton design pattern can violate the Single Responsibility Principle.
+           - Controlling the Instance
+           - Performing Business Logic
 
 ### 4. What is MVC Architecture in iOS?
  - `Model` - Models are representations of your your app’s data.
