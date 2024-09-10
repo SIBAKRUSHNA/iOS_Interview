@@ -16,4 +16,4 @@
   - There is no guarantee that the property will be initialized only.
     
 ### 6. What is property wrapper?
-  - A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property.
+  - A property wrapper in Swift is a feature that allows you to add custom behavior to properties in a concise and reusable way.
