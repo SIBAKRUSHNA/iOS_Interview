@@ -99,5 +99,11 @@ let userManager = UserManager()
 // Inject the dependency via method
 userManager.saveUserData(data: "User info", using: databaseService) // Output: Data saved: User info
 ```
-### 3. What is Swinject?
+### 3. Advantages and disadvantages of dependency injection in swift.
+  - Advantages of Dependency Injection in Swift
+      - Loose Coupling: Dependency injection (DI) promotes loose coupling between classes. Instead of hardcoding dependencies within a class, you inject them externally, making it easier to swap out implementations without altering the class itself.
+
+      - Improved Testability: With DI, you can pass mock or stub objects during testing, allowing for more precise unit tests. This helps in isolating individual units of code and ensuring they behave correctly without relying on actual dependencies.
+
+### 4. What is Swinject?
   - Swinject is a lightweight and flexible dependency injection framework for Swift. It provides a way to manage the dependencies between objects, making your code more modular and easier to test. By using Swinject, you can decouple components in your application, leading to cleaner and more maintainable code
