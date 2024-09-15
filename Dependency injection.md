@@ -101,9 +101,13 @@ userManager.saveUserData(data: "User info", using: databaseService) // Output: D
 ```
 ### 3. Advantages and disadvantages of dependency injection in swift.
   - Advantages of Dependency Injection in Swift
-      - Loose Coupling: Dependency injection (DI) promotes loose coupling between classes. Instead of hardcoding dependencies within a class, you inject them externally, making it easier to swap out implementations without altering the class itself.
+      - `Loose Coupling:` Dependency injection (DI) promotes loose coupling between classes. Instead of hardcoding dependencies within a class, you inject them externally, making it easier to swap out implementations without altering the class itself.
 
-      - Improved Testability: With DI, you can pass mock or stub objects during testing, allowing for more precise unit tests. This helps in isolating individual units of code and ensuring they behave correctly without relying on actual dependencies.
+      - `Improved Testability:` With DI, you can pass mock or stub objects during testing, allowing for more precise unit tests. This helps in isolating individual units of code and ensuring they behave correctly without relying on actual dependencies.
+        
+   - Disadvantages of Dependency Injection in Swift
+      - `Increased Complexity:` While DI simplifies the relationships between objects, it can introduce complexity in how dependencies are managed and injected. Beginners may find it difficult to grasp at first, and excessive use can lead to over-engineering.
+      - `Difficult to Debug:` If you rely heavily on DI frameworks or complex DI setups, debugging can become harder, especially if the injection mechanism fails silently or if there are issues with configuration that manifest at runtime.
 
 ### 4. What is Swinject?
   - Swinject is a lightweight and flexible dependency injection framework for Swift. It provides a way to manage the dependencies between objects, making your code more modular and easier to test. By using Swinject, you can decouple components in your application, leading to cleaner and more maintainable code
