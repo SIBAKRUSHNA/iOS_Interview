@@ -48,3 +48,8 @@
     used to initialize and own an instance of an ObservableObject in a view, ensuring that the object is created only once 
     and persists for the lifetime of the view.
 
+### 14. @StateObject vs. @ObservedObject: The differences explained
+  - `@StateObject`:
+       - Suitable for views that create and maintain the state of an object, like data models or view models.
+  - `@ObservedObject`:
+       - Best used when a view is given an observable object by a parent and should observe it without owning or reinitializing it.
