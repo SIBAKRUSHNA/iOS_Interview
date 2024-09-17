@@ -53,3 +53,6 @@
        - Suitable for views that create and maintain the state of an object, like data models or view models.
   - `@ObservedObject`:
        - Best used when a view is given an observable object by a parent and should observe it without owning or reinitializing it.
+
+### 14. What is GeometryReader?
+  - A container view that defines its content as a function of its own size and coordinate space.
