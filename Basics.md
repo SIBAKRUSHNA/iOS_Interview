@@ -81,4 +81,5 @@ print(user.age)   // 30
 ### 12. What is difference between static and dynamic library in in swift?
   - Static libraries provide simplicity, performance, and code protection.
   - While dynamic libraries offer code sharing, versioning flexibility, and dynamic loading capabilities.
-
+    
+### 12. What is the difference between Static and Class variable?
