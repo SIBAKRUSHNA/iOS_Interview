@@ -17,3 +17,5 @@
     
 ### 6. What is property wrapper?
   - A property wrapper in Swift is a feature that allows you to add custom behavior to properties in a concise and reusable way.
+    
+### 6. Are lazy vars computed more than once?
