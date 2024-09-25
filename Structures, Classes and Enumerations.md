@@ -17,11 +17,11 @@
 ### 2. What is the difference between value types and reference types?
 
 - `Reference Types`
-     - Value types are types where each instance keeps a unique copy of its data.
+     - Reference types are types where instances share a single copy of the data.
      - Classes (class): Classes in Swift are reference types.
        
 - `Value Types`
-     -  Reference types are types where instances share a single copy of the data.
+     - Value types are types where each instance keeps a unique copy of its data.
      -  Structures (struct): Structures in Swift are value types.
        
 ### 3. What is difference between enumerations and structures?
