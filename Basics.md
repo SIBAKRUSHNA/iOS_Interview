@@ -85,3 +85,6 @@ print(user.age)   // 30
 ### 13. What is the difference between Static and Class variable?
 ### 14. What is associativity in swift?
   - In Swift, associativity is the order in which operators of the same precedence are grouped together
+
+### 15. What is Associated Types?
+  - In Swift, associated types are a powerful feature used with protocols to define placeholder types that can be specified later by conforming types.
