@@ -82,4 +82,6 @@ print(user.age)   // 30
   - Static libraries provide simplicity, performance, and code protection.
   - While dynamic libraries offer code sharing, versioning flexibility, and dynamic loading capabilities.
     
-### 12. What is the difference between Static and Class variable?
+### 13. What is the difference between Static and Class variable?
+### 14. What is associativity in swift?
+  - In Swift, associativity is the order in which operators of the same precedence are grouped together
