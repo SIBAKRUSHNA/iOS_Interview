@@ -56,3 +56,6 @@
 
 ### 14. What is GeometryReader?
   - A container view that defines its content as a function of its own size and coordinate space.
+    
+### 15. What is grid in swiftUI?
+  - A grid in SwiftUI is a container view that organizes other views in a two-dimensional layout
