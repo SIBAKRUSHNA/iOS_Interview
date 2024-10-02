@@ -103,24 +103,26 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
      - Prevents race conditions by allowing only a controlled number of threads to access critical sections.
      - Maintains thread safety, particularly when dealing with shared data
   ```swift
-    let semaphore = DispatchSemaphore(value: 1)
-    func performTask(_ inputValue: Int) {
+     let semaphore = DispatchSemaphore(value: 1)
+func performTask(_ inputValue: Int) {
     print("Task \(inputValue) is wait for access")
     semaphore.wait()
     print("Task \(inputValue) is through resouce")
     sleep(2)
     print("Task \(inputValue) is done")
     semaphore.signal()
-    }
-    DispatchQueue.global().async {
+}
+
+DispatchQueue.global().async {
     performTask(1)
-    }
-    DispatchQueue.global().async {
+}
+DispatchQueue.global().async {
     performTask(2)
-    }
-    DispatchQueue.global().async {
+}
+DispatchQueue.global().async {
     performTask(3)
-    }
+}
+
   ```
    
 ### 16. How to cancel a thread in swift?
