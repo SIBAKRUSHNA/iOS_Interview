@@ -109,5 +109,9 @@ userManager.saveUserData(data: "User info", using: databaseService) // Output: D
       - `Increased Complexity:` While DI simplifies the relationships between objects, it can introduce complexity in how dependencies are managed and injected. Beginners may find it difficult to grasp at first, and excessive use can lead to over-engineering.
       - `Difficult to Debug:` If you rely heavily on DI frameworks or complex DI setups, debugging can become harder, especially if the injection mechanism fails silently or if there are issues with configuration that manifest at runtime.
 
-### 4. What is Swinject?
+### 4. What is Tight Coupling and Loose Coupling?
+   - `Tight Coupling`: Tight Coupling means one class is dependent on another class.
+   - `Loose Coupling`: Loose Coupling means one class is dependent on interface rather than class.
+
+### 5. What is Swinject?
   - Swinject is a lightweight and flexible dependency injection framework for Swift. It provides a way to manage the dependencies between objects, making your code more modular and easier to test. By using Swinject, you can decouple components in your application, leading to cleaner and more maintainable code
