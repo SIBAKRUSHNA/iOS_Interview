@@ -61,4 +61,7 @@
   - A grid in SwiftUI is a container view that organizes other views in a two-dimensional layout
 
 ### 16. How to use uikit components in swiftUI?
-  - In SwiftUI, you can integrate UIKit components using the `UIViewRepresentable` and `UIViewControllerRepresentable` protocols. 
+  - In SwiftUI, you can integrate UIKit components using the `UIViewRepresentable` and `UIViewControllerRepresentable` protocols.
+    
+### 16. What publicer and subscriber in swiftUI?
+  - In other words: Publishers are the source of data and subscribers are the consumers of that data.
