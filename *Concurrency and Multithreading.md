@@ -99,7 +99,7 @@ func readFromSharedResource(completion: @escaping ([String]) -> Void) {
    - 
 ### 15. What is semaphore in swift?
    - Semaphore is a synchronization mechanism used to manage access to a shared resource by multiple threads.
- `Summary of Benefits`:
+   - `Summary of Benefits`:
          - Prevents race conditions by allowing only a controlled number of threads to access critical sections.
          -  Maintains thread safety, particularly when dealing with shared data.
 
