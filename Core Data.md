@@ -10,3 +10,9 @@
     - After creating a new version, make sure to set the newly created one (e.g., ModelV2) as the current data model version from the File Inspector.
 - `Lightweight Migration Setup`:
     - If the migration is lightweight, Core Data will automatically handle it. Ensure the following options are set in your persistent store coordinator
+
+### 2.
+
+### 3.
+
+### 4.
