@@ -13,6 +13,7 @@
 
 ### 2. How to fetch data form core data?
 ``` swift
+let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "EntityName")
      func fetchData() {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
         
