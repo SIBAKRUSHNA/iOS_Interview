@@ -88,3 +88,6 @@ print(user.age)   // 30
 
 ### 15. What is Associated Types?
   - In Swift, associated types are a powerful feature used with protocols to define placeholder types that can be specified later by conforming types.
+
+### 16. What is type safe in swift?
+   - Type safety in Swift is a feature that ensures code is checked for type errors before it's compiled.
