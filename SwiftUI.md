@@ -65,3 +65,6 @@
     
 ### 16. What publicer and subscriber in swiftUI?
   - In other words: Publishers are the source of data and subscribers are the consumers of that data.
+
+### 17. What is combine framework in swiftUI?
+  - The Combine framework provides a declarative Swift API for processing values over time.
