@@ -91,3 +91,6 @@ print(user.age)   // 30
 
 ### 16. What is type safe in swift?
    - Type safety in Swift is a feature that ensures code is checked for type errors before it's compiled.
+     
+### 17. What is apple human interface guidelines(HIG)?
+   - The HIG offers guidance and best practices for designing exceptional user experiences across all Apple platforms.
