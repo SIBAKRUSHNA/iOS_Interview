@@ -115,3 +115,26 @@ performOperation {
     // closure body
 }
 ```
+### 5. What is closures Capture by Reference?
+  - Variables (declared with var) are captured by reference. If the value of the variable changes after the closure has captured it, the closure will reflect those changes.
+    
+```swift
+var counter = 0
+let closureByReference = {
+    print("Counter is now: \(counter)")
+}
+counter = 10
+closureByReference()  // Prints "Counter is now: 10"
+```
+
+### 6. What is closures Capture by Values?
+   - Constants (declared with let) are captured by value, meaning the closure holds onto the value at the time of the capture.
+
+```swift
+var counter = 0
+let closureByValue = { [counter] in
+    print("Captured Counter is: \(counter)")
+}
+counter = 10
+closureByValue()  // Prints "Captured Counter is: 0"
+```
