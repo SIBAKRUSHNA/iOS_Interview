@@ -36,6 +36,10 @@
      - `Issue`: The ViewModel can become bloated if too much business logic or UI-related code is added to it.
      - `Impact`: This results in hard-to-maintain code, as it can become challenging to separate concerns. Developers might inadvertently add View logic in the ViewModel, which goes against MVVM principles.
 
+  - `Difficult Binding with UIKit`
+     - `Issue`: UIKit doesn’t have built-in support for data binding, which makes implementing MVVM more challenging.
+     - `Impact`: Developers often need to rely on libraries like RxSwift or Combine to implement reactive bindings, adding extra dependencies and complexity.
+
 ### 7.
 
 ### 8.
