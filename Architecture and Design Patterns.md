@@ -31,7 +31,10 @@
 
  ![](https://i.sstatic.net/AIPW4.png)
    
-### 6.
+### 6. What is the disadvantages of MVVM?
+  -  `ViewModel Bloat`
+     - `Issue`: The ViewModel can become bloated if too much business logic or UI-related code is added to it.
+     - `Impact`: This results in hard-to-maintain code, as it can become challenging to separate concerns. Developers might inadvertently add View logic in the ViewModel, which goes against MVVM principles.
 
 ### 7.
 
