@@ -44,8 +44,12 @@ func loadData(completion: CompletionHandler) {
    ```
 
 ### 4. what is tuple in swift?
-   -  Tuple is a group of multiple values combined into a single compound value.
-
+   -  A tuple in Swift is a group of multiple values combined into a single compound value, where each value can have different types.
+   -  🔍 Explanation
+        - Used to return multiple values from a function
+        - Can contain mixed data types
+        - Values can be accessed by index or name
+    
  ```swift
    func getUser() -> (name: String, age: Int) {
     return ("Alice", 30)
