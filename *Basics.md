@@ -61,17 +61,39 @@ print(user.age)   // 30
  ```
 ### 5. What is self and Self in swift?
   - self :- self refers to the current instance, in the body of one of this method.
+  - ✅ Use cases:
+    - Access instance properties/methods
+    - Resolve naming conflicts
+    - Refer to the current object inside closures
   - Self :- Self is used to refer to the type of the current class, structure, enumeration with its own method or 
     initializer.
+  - ✅ Use cases:
+    - Protocols (especially with associatedtype)
+    - Returning the same type dynamically
+    - Writing reusable/generic code
 
 ### 6. What is defer keyword in Swift?
   - Defer is a keyword that declares a block of code that will only be expected when execution leaves the current scope.
+  - 🔹 Why we use defer
+    - It’s mainly used for:
+    - Cleanup tasks (closing files, releasing resources)
+    - Final logging
+    - Resetting state
+    - Ensuring important code always runs
 
 ### 7. What is mutating keyword in Swift?
   - The property of value type can not be modified within its instance method by default.
+  - 🔹 Why is it needed?
+    - Swift’s structs and enums are value types, meaning:
+    - Their methods cannot modify properties by default
+    - You must explicitly mark methods as mutating to allow changes
 
 ### 8. What is Any in swift?
   - Any can represent an instance of any type at all, including function types.
+  - ⚡ When to Use
+   - When type is unknown at compile time
+   - Parsing JSON ([String: Any])
+   - Heterogeneous collections
 
 ### 9. What is AnyObject in swift ?
   - AnyObject can represent an instance of any class type.
