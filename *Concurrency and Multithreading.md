@@ -6,6 +6,13 @@
 
 ### 2. What is concurrency?
   - Concurrency in Swift refers to the ability of a program to execute multiple tasks or operations simultaneously.
+  - Concurrency is used to:
+    - Keep UI smooth (main thread free)
+    - Run heavy tasks in background
+  - Common tools:
+    - GCD (Grand Central Dispatch)
+    - OperationQueue
+    - async/await (modern Swift)
 
 ### 3. What is GCD?
   - Grand Central Dispatch or GCD is a low-level API for managing concurrent operations.
