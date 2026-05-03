@@ -268,7 +268,152 @@ DispatchQueue.global().async {
    
 ### 16. How to cancel a thread in swift?
    - Using dispatch queue cancel method.
-     
+   - ✅ 1. GCD (Grand Central Dispatch)
+      - ❌ Reality:
+         - No built-in cancellation for running tasks
+         - Only manual/cooperative techniques
+      - 🔹 1.1 Simple Flag
+         ```swift
+          var isCancelled = false
+          DispatchQueue.global().async {
+            for i in 0..<1000 {
+              if isCancelled {
+                 print("Cancelled")
+                  return
+              }
+            print(i)
+          }
+        }
+        isCancelled = true
+        ```
+        ⚠️ Not thread-safe
+
+     - 🔹 1.2 DispatchWorkItem (Best in GCD)
+         ```swift
+         let workItem = DispatchWorkItem {
+         for i in 0..<1000 {
+             if workItem.isCancelled {
+                print("Cancelled")
+                return
+           }
+           print(i)
+         }
+        }
+       DispatchQueue.global().async(execute: workItem)
+         
+        // Cancel
+        workItem.cancel()
+        ```
+      ✔️ Cleanest GCD option
+      ⚠️ Still cooperative
+
+     - 🔹 1.3 Cancel Before Execution
+       ```swift
+        let workItem = DispatchWorkItem {
+         print("Will not execute if cancelled")
+        }
+
+       DispatchQueue.global().asyncAfter(deadline: .now() + 5, execute: workItem)
+        workItem.cancel()
+       ```
+     ✔️ Useful for debouncing
+
+     - 🔹 1.4 Thread-Safe Flag (Barrier)
+        ```swift
+        let queue = DispatchQueue(label: "cancel.queue", attributes: .concurrent)
+        var _isCancelled = false
+
+         func cancel() {
+            queue.async(flags: .barrier) {
+            _isCancelled = true
+         }
+       }
+
+        func isCancelled() -> Bool {
+           queue.sync { _isCancelled }
+       }
+       ```
+      ✔️ Avoid race conditions
+
+     - 🔹 1.5 Semaphore-Based
+         ```swift
+         let semaphore = DispatchSemaphore(value: 1)
+         var isCancelled = false
+         ```
+        ✔️ Low-level control
+        ⚠️ Risky (deadlocks)
+
+     - 🧠 GCD Summary
+        - ❌ No real cancellation
+     - ✅ Best: DispatchWorkItem
+        - ⚠️ Everything is manual
+     - ✅ 2. OperationQueue / Operation
+        - 👉 Best pre-async/await approach
+
+     - 🔹 Basic Cancellation
+          ```swift
+         let operation = BlockOperation {
+            for i in 0..<1000 {
+              if operation.isCancelled {
+                  print("Cancelled")
+                  return
+              }
+            print(i)
+           }
+         }
+
+        let queue = OperationQueue()
+        queue.addOperation(operation)
+
+       // Cancel
+       operation.cancel()
+       ```
+     - 🔹 Custom Operation (Advanced)
+         ```swift
+         class MyOperation: Operation {
+            override func main() {
+               for i in 0..<1000 {
+                 if isCancelled { return }
+                    print(i)
+                 }
+             }
+          }
+         ```
+         
+     - 🔹 Cancel All Operations
+         ```swift
+        queue.cancelAllOperations()
+         ```
+         
+     - ✔️ Advantages
+       - Built-in cancellation support
+       - Supports dependencies
+       - Better control than GCD
+         
+     - ⚠️ Important
+       - cancel() does NOT stop execution immediately
+       - You must check isCancelled
+         
+     - 🧠 OperationQueue Summary
+       - ✅ Structured cancellation
+       - ✅ Better than GCD
+     - ⚠️ Still cooperative
+       - ✅ 3. Swift Concurrency (async/await) ⭐ BEST
+
+   👉 Modern and recommended approach
+
+   - 🔹 Basic Task Cancellation
+       ```swift
+        let task = Task {
+          for i in 0..<1000 {
+             try Task.checkCancellation()
+             print(i)
+          }
+      }
+
+      // Cancel
+      task.cancel()
+       ``` 
 ### 17. What is dispatchGroup?
    - A group of tasks that you monitor as a single unit.
 
