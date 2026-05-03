@@ -119,6 +119,15 @@
     
 ### 6. What is async await?
   - Async await is a mechanism used to create and execute asynchronous functions.
+  - 🧠 Key Concepts
+     - 1. async
+        - Marks a function as asynchronous.
+        - It means the function can suspend and resume later.
+
+     - 2. await
+        - Used when calling an async function.
+        - It tells Swift: “Wait here until this task finishes, but don’t block the thread.”
+          
     ```swift
     func processData() async {
     let data = await fetchData() // Wait for fetchData to complete
