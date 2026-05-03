@@ -139,23 +139,57 @@
     ```
 ### 7. When to use dispatch barrier?
   -  It ensures that the task you submit with the barrier flag will only execute after all previously submitted tasks on that queue have finished.
-```swift
-let queue = DispatchQueue(label: "com.example.queue", attributes: .concurrent)
-var sharedResource = [String]()
+  - ✅ When to Use dispatch_barrier
+     - 1. Reader–Writer Problem (Most Important Use Case)
+        - Use it when:
+        - Multiple threads can read simultaneously
+        - But writes must be exclusive
+        - 👉 Example: Shared cache, dictionary, array
 
-func addToSharedResource(item: String) {
-    queue.async(flags: .barrier) {
-        sharedResource.append(item)
-    }
-}
+        ```swift
+       let queue = DispatchQueue(label: "com.example.concurrent", attributes: .concurrent)
+       var data: [String] = []
+        
+       // Read (can run concurrently)
+       queue.async {
+         print(data)
+       }
 
-func readFromSharedResource(completion: @escaping ([String]) -> Void) {
-    queue.async {
-        completion(sharedResource)
-    }
-}
+       // Write (must be exclusive)
+       queue.async(flags: .barrier) {
+        data.append("New Value")
+       }
+        ```
+    
+      ✔ Reads → parallel
+      ✔ Writes → serialized (safe)
 
-```
+  - 2. Avoiding Race Conditions
+    - When multiple threads update shared state, barrier ensures:
+        - No partial writes
+        - No corrupted data
+          
+  - 3. Custom Thread-Safe Data Structures
+    - Instead of locks (NSLock), you can use:
+        - Concurrent queue + barrier = cleaner design
+          
+  - 4. When You Want Better Performance Than Serial Queue
+    - Serial queue → safe but slow (everything waits)
+    - Concurrent + barrier → fast reads + safe writes
+      
+  - ⚠️ Important Rules
+    - ❗ Works ONLY with Custom Concurrent Queues
+      ```swift
+      DispatchQueue(label: "queue", attributes: .concurrent)
+      ```
+    - 🚫 Does NOT work properly on:
+       - Global queues (DispatchQueue.global())
+       - Serial queues
+
+    - ❗ async vs sync
+      - dispatch_barrier_async → preferred (non-blocking)
+      - dispatch_barrier_sync → blocks current thread (use carefully)
+        
 ### 8. What is quality of services?
 - The quality of service, or the execution priority, to apply to tasks. It allows you to manage the execution priority of tasks in your app.
   
