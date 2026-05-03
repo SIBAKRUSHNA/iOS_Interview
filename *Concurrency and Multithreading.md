@@ -16,10 +16,101 @@
 
 ### 3. What is GCD?
   - Grand Central Dispatch or GCD is a low-level API for managing concurrent operations.
+  - 🔹 Why GCD is used?
+     - To perform background tasks (API calls, file I/O, heavy computation)
+     - To keep the UI responsive
+     - To avoid manually creating and managing threads
+  - 🔹 Core Concepts
+     - 1. Dispatch Queues
+         - Queues where tasks are submitted.
+         - Serial Queue → One task at a time
+         - Concurrent Queue → Multiple tasks at the same time
+        ```swift  
+         let serialQueue = DispatchQueue(label: "com.example.serial")
+         let concurrentQueue = DispatchQueue(label: "com.example.concurrent", attributes: .concurrent)
+        ```
+    - 2. Main Queue
+       - Runs on the main thread
+       - Used for UI updates
+       ```swift 
+      DispatchQueue.main.async {
+         // Update UI here
+         }
+       ```
+    - 3. Global Queue
+      - Background thread pool managed by the system
+      ```swift   
+      DispatchQueue.global(qos: .background).async {
+        // Background work
+       }
+      ```
+    - 4. Sync vs Async
+      - sync → waits until task finishes (blocking)
+      - async → continues immediately (non-blocking)
+      ```swift 
+      DispatchQueue.global().async {
+        print("Runs in background")
+      }
+      DispatchQueue.main.sync {
+        print("Runs synchronously")
+      }
+      ```
     
 ### 4. What is NSOperation?
   - NSOperation is a class in Swift used for managing and executing operations concurrently.
+  - 🔹 Why Use NSOperation Instead of GCD?
+      - GCD is fast but low-level. NSOperation adds:
+      - Task dependencies
+      - Cancellation support
+      - State management (ready, executing, finished) Priority control
+      - KVO (Key-Value Observing) support
+  - 🔹 When to Use NSOperation?
+      - Use it when you need:
+      - Complex workflows
+      - Task dependencies
+      - Fine control over execution
+      - Reusable, modular tasks
+  - 🔹 Key Features (Important for Interviews)
+      - 1. Dependencies
+           
+        Control execution order:
+        ```swift 
+         op2.addDependency(op1)
+        ```
+        ➡️ op2 runs only after op1 finishes
 
+      - 2. Cancellation
+           
+         ```swift    
+         operation.cancel()
+         ```
+        Inside operation:
+        
+        ```swift  
+        if isCancelled { return }
+        ```
+        
+     - 3. Priority
+          
+        ```swift  
+       operation.queuePriority = .high
+        ```
+        
+     - 4. Max Concurrent Operations
+          
+        ```swift  
+       queue.maxConcurrentOperationCount = 2
+        ```
+       ➡️ Limits number of parallel tasks
+
+     - 5. Completion Block
+          
+       ```swift  
+       operation.completionBlock = {
+       print("Task finished")
+       }
+       ```
+     
 ### 5. What is synchronous and asynchronous? 
   - `Synchronous`
         - Synchronous execution means that tasks are performed sequentially. Each task must complete before the next one starts.
