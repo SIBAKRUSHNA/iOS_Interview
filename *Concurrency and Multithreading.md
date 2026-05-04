@@ -416,6 +416,11 @@ DispatchQueue.global().async {
        ``` 
 ### 17. What is dispatchGroup?
    - A group of tasks that you monitor as a single unit.
+   - 🔹 Why use DispatchGroup?
+      - When you have multiple async operations (API calls, file reads, background tasks) and you want to:
+      - Run them in parallel
+      - Wait until all complete
+      - Then perform a final task (like updating UI)
 
 ### 18. What is atomic and non-atomic in swift?
   - `Atomic` - Atomic means only one thread accesses the variable (static type). Atomic is 
