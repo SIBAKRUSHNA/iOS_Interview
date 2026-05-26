@@ -6,8 +6,36 @@
 ### 2. 
 
 ### 3. What is difference between guard let and if let in swift?
-  - guard let you are creating a new variable that will exist in the current scope.
-  - In if let, you can not access out the scope and also you do not need to return statement.
+ ## if let
+  - Used for optional checking
+  - Executes code only when value exists
+  - Variable scope is inside if block
+ ```swift   
+if let name = userName {
+    print(name)
+}
+```
+- Use When
+  - Optional value is not mandatory
+  - Need separate else handling
+  - Small conditional checks
+
+## guard let
+  - Used for early exit
+  - Value is required for remaining function
+  - Avoids nested code
+  - Variable available after guard statement
+ ```swift 
+guard let name = userName else {
+    return
+}
+
+print(name)
+```
+ - Use When
+   - Validation required
+   - Clean readable code needed
+   - Value mandatory for execution
     
 ### 4. What is optional chaining?
   - Optional chaining is a process in which is used to call properties, methods and subscripts of an optional that might currently be nil.
