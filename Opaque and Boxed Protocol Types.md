@@ -64,3 +64,76 @@ for item in animals {
     let value = getResult()
     print(value.getValue())
     ```
+### 3, What is the difference between some and any?
+
+## some → Opaque Type
+- some means:
+  - “This function returns one specific type that conforms to the protocol, but I won't tell you which type.”
+  - The compiler knows the exact type internally.
+
+- Example:
+```swift
+protocol Animal {
+    func sound()
+}
+
+struct Dog: Animal {
+    func sound() {
+        print("Bark")
+    }
+}
+
+func getAnimal() -> some Animal {
+    return Dog()
+}
+```
+- Here:
+  - Caller only knows it returns Animal
+  - Actual type is always Dog
+  - Type is fixed
+    
+- Important Rule
+   - All return paths must return the same concrete type.
+
+- ❌ Invalid:
+```swift
+func getAnimal(isDog: Bool) -> some Animal {
+    if isDog {
+        return Dog()
+    } else {
+        return Cat()
+    }
+}
+```
+   - Because Dog and Cat are different concrete types.
+
+## any → Existential Type
+- any means:
+   - “This variable can hold any type conforming to the protocol.”
+
+- Example:
+```swift
+protocol Animal {
+    func sound()
+}
+
+struct Dog: Animal {
+    func sound() {
+        print("Bark")
+    }
+}
+
+struct Cat: Animal {
+    func sound() {
+        print("Meow")
+    }
+}
+
+var animal: any Animal
+
+animal = Dog()
+animal = Cat()
+```
+ - Here:
+    - Variable can store different conforming types
+    - Runtime decides actual type
