@@ -107,7 +107,7 @@ car.stop?()
    - UIScrollViewDelegate
  
  ## 2. Modern Swift Preferred Approach
-    - Instead of optional methods, Swift prefers default implementation using protocol extensions.
+  - Instead of optional methods, Swift prefers default implementation using protocol extensions.
 ``` swift
 Protocol
 protocol Downloadable {
