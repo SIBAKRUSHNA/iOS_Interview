@@ -68,3 +68,84 @@ class SecurityAlarm: NSObject, Responder {
 
 ### 7. Can protocol be fileprivate?
   - Yes. Protocol can be fileprivate, private, public. Private and fileprivate protocol can be confirmed only within current file.
+
+### 8. Optional Methods in Protocols – Swift Notes
+  ## 1. Optional Methods Using @objc
+   - Swift protocols support optional methods only with @objc.
+``` swift
+@objc protocol Vehicle {
+
+    func start()
+
+    @objc optional func stop()
+}
+```
+- Conforming Class
+``` swift
+class Car: Vehicle {
+
+    func start() {
+        print("Start")
+    }
+
+    // stop() is optional
+}
+```
+- Calling Optional Method
+``` swift
+let car = Car()
+
+car.stop?()
+```
+- Important Points
+   - Optional methods require @objc
+   - Works only with classes
+   - Uses Objective-C runtime
+   - Optional method must be called using ?
+- Real UIKit Examples
+   - UITableViewDelegate
+   - UIScrollViewDelegate
+ 
+ ## 2. Modern Swift Preferred Approach
+    - Instead of optional methods, Swift prefers default implementation using protocol extensions.
+``` swift
+Protocol
+protocol Downloadable {
+
+    func startDownload()
+
+    func cancelDownload()
+}
+```
+- Default Implementation
+``` swift
+extension Downloadable {
+
+    func cancelDownload() {
+        print("Default cancel")
+    }
+}
+```
+- Conforming Type
+``` swift
+class FileDownloader: Downloadable {
+
+    func startDownload() {
+        print("Downloading...")
+    }
+
+    // cancelDownload() becomes optional
+}
+```
+- Usage
+``` swift
+let file = FileDownloader()
+
+file.startDownload()
+file.cancelDownload()
+```
+- Output
+``` swift
+Downloading...
+Default cancel
+```
