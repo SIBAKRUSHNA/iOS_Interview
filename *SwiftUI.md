@@ -3,6 +3,9 @@
  ### 1. What is SwiftUI?
   - SwiftUI is a modern declarative framework by Apple for building user interfaces across all Apple platforms.
 
+<img width="1024" height="1536" alt="ChatGPT Image Jun 2, 2026, 09_31_33 PM" src="https://github.com/user-attachments/assets/6480fe19-51b9-4b7e-894d-939899731dca" />
+
+
  ### 2. What is some in swiftUI?
   - We learned that the “some” keyword signifies an opaque type
     
@@ -85,4 +88,21 @@
         Text("Login")
      }
   }
+```
+### 19. What is @Observable in SwiftUI?
+- @Observable is a Swift macro introduced in iOS 17 that automatically tracks property changes and updates SwiftUI views.
+   ## Key Points:
+  - Part of the Observation framework.
+  - Replaces ObservableObject and @Published in many cases.
+  - Reduces boilerplate code.
+  - SwiftUI automatically refreshes when data changes.
+
+  ## Example:
+```swift
+import Observation
+
+@Observable
+class UserViewModel {
+    var name = "John"
+}
 ```
