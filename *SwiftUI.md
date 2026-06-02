@@ -68,3 +68,19 @@
 
 ### 17. What is combine framework in swiftUI?
   - The Combine framework provides a declarative Swift API for processing values over time.
+
+### 18. What is @ViewBuilder in SwiftUI?
+  - @ViewBuilder is a result builder provided by SwiftUI.
+  - It allows multiple views to be declared inside a closure, function, or computed property.
+  - SwiftUI automatically combines these views into a single view hierarchy.
+  - It supports conditional statements such as if, else, and switch.
+  - It is used internally by the body property of SwiftUI views.
+```
+  @ViewBuilder
+   func contentView(isLoggedIn: Bool) -> some View {
+     if isLoggedIn {
+        Text("Welcome")
+      } else {
+        Text("Login")
+     }
+  }
