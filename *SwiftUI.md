@@ -75,7 +75,7 @@
   - SwiftUI automatically combines these views into a single view hierarchy.
   - It supports conditional statements such as if, else, and switch.
   - It is used internally by the body property of SwiftUI views.
-```
+```swift
   @ViewBuilder
    func contentView(isLoggedIn: Bool) -> some View {
      if isLoggedIn {
@@ -84,3 +84,4 @@
         Text("Login")
      }
   }
+```
