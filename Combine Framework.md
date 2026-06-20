@@ -1,28 +1,31 @@
+# Combine Framework - Complete Interview Notes
 
-### 1. What is Combine?
-The Combine framework provides a declarative Swift API for processing values over time. Combine is Apple's reactive programming framework introduced in iOS 13.
+## 1. What is Combine?
 
-It helps handle:
-  - Asynchronous operations
-  - API calls
-  - Notifications
-  - User events
-  - Data binding
+The **Combine** framework provides a declarative Swift API for processing values over time. It is Apple's reactive programming framework introduced in **iOS 13**.
 
-Instead of callbacks and delegates, Combine uses Publishers and Subscribers.
+Combine helps handle:
 
-### 2. Combine Framework - Deep Interview Notes
+* Asynchronous operations
+* API calls
+* Notifications
+* User events
+* Data binding
 
-## Why Combine?
+Instead of callbacks and delegates, Combine uses **Publishers** and **Subscribers**.
 
-Before Combine, asynchronous tasks were handled using:
+---
+
+# 2. Why Combine?
+
+Before Combine, asynchronous tasks were commonly handled using:
 
 * Completion Handlers
 * Delegates
 * NotificationCenter
-* KVO (Key Value Observing)
+* KVO (Key-Value Observing)
 
-Example:
+### Example
 
 ```swift
 fetchUsers { result in
@@ -35,32 +38,51 @@ fetchUsers { result in
 }
 ```
 
-Problems:
+### Problems
 
 * Callback Hell
 * Hard to chain multiple API calls
 * Difficult error handling
 * Difficult testing
+* Hard to maintain complex async flows
 
-Combine solves these problems using a reactive programming approach.
+Combine solves these problems using a **reactive programming** approach.
 
 ---
 
-# Reactive Programming
+# 3. Reactive Programming
 
 Reactive Programming means:
 
-"React to changes in data automatically."
+> React to changes in data automatically.
 
-Example:
+### Example Flow
 
-User enters username → validation runs automatically → button state updates automatically.
+```text
+User Input
+     ↓
+Validation
+     ↓
+Button State
+     ↓
+UI Update
+```
 
 Instead of manually updating every component, data changes flow through a stream.
 
-Think of Combine as a pipeline:
+### Combine Pipeline
 
-Data Source → Operators → Subscriber
+```text
+Data Source
+     ↓
+Publisher
+     ↓
+Operators
+     ↓
+Subscriber
+```
+
+Example:
 
 ```text
 API
@@ -76,9 +98,9 @@ sink()
 
 ---
 
-# Combine Architecture
+# 4. Combine Architecture
 
-Three main components:
+Combine consists of three main components:
 
 ```text
 Publisher
@@ -88,37 +110,40 @@ Subscription
 Subscriber
 ```
 
+---
+
 ## Publisher
 
-Publisher produces values over time.
+A Publisher produces values over time.
 
-Generic definition:
+### Generic Definition
 
 ```swift
 Publisher<Output, Failure>
 ```
 
-Example:
+### Example
 
 ```swift
 Just("Hello")
 ```
 
+### Meaning
+
+```swift
 Output = String
-
 Failure = Never
+```
 
-Meaning:
-
-"This publisher emits one String and never fails."
+This publisher emits a single String value and never fails.
 
 ---
 
 ## Subscriber
 
-Receives values from Publisher.
+A Subscriber receives values from a Publisher.
 
-Example:
+### Example
 
 ```swift
 Just("Hello")
@@ -127,64 +152,117 @@ Just("Hello")
     }
 ```
 
-Flow:
+### Flow
 
 ```text
-Publisher → Subscriber
-Hello       Print
+Publisher  →  Subscriber
+ Hello     →    Print
 ```
 
 ---
 
-# Subscription Lifecycle
+## Subscription
 
-When Subscriber attaches:
+A Subscription connects a Publisher and Subscriber.
+
+It manages:
+
+* Data flow
+* Demand requests
+* Cancellation
+
+---
+
+# 5. Subscription Lifecycle
+
+When a Subscriber attaches to a Publisher:
 
 ```swift
-publisher.sink { }
+publisher.sink { _ in }
 ```
 
-Steps:
+### Steps
 
 1. Subscriber subscribes
-2. Subscription created
+2. Subscription is created
 3. Subscriber requests demand
 4. Publisher emits values
-5. Completion received
+5. Completion event is sent
+
+### Lifecycle Diagram
 
 ```text
 Subscriber
-    ↓ subscribe
-Publisher
-    ↓
-Subscription
-    ↓
-Values
+      ↓
+  Subscribe
+      ↓
+ Publisher
+      ↓
+ Subscription
+      ↓
+    Values
+      ↓
+ Completion
 ```
 
-This lifecycle is a favorite interview question.
+⚠️ This is a very common interview question.
 
 ---
-### 3. What is a Publisher in Combine?
-A Publisher is the core component of the Combine framework that produces and emits values over time. It can send:
-  - Values (zero or more)
-  - Completion event (finished successfully)
-  - Failure event (error)
+
+# 6. What is a Publisher?
+
+A Publisher is the core component of Combine that produces and emits values over time.
+
+A Publisher can send:
+
+* Zero or more values
+* Completion event
+* Failure event
+
+### Example
+
+```swift
+Just("Hello Combine")
+```
 
 Think of a Publisher as a data source that broadcasts information to interested subscribers.
 
-### 4. What is a Subscriber in Combine?
-A Subscriber is a component in Combine that receives values from a Publisher.
-It acts as the consumer in the Publisher–Subscriber pattern.
+---
 
-  - Publisher → Subscriber
+# 7. What is a Subscriber?
 
-The Publisher produces data, and the Subscriber receives and processes it.
+A Subscriber is a component that receives values from a Publisher.
 
-### 5. What is a sink and how is it used?
-In Combine, sink is a subscriber used to receive values and completion events from a publisher.
-It is one of the simplest ways to subscribe to a publisher.
-## Syntax
+### Relationship
+
+```text
+Publisher → Subscriber
+```
+
+The Publisher produces data and the Subscriber consumes it.
+
+### Example
+
+```swift
+Just("Hello")
+    .sink { value in
+        print(value)
+    }
+```
+
+---
+
+# 8. What is sink?
+
+`sink` is a built-in Subscriber provided by Combine.
+
+It allows you to receive:
+
+* Values
+* Completion events
+
+### Syntax
+
 ```swift
 publisher.sink(
     receiveCompletion: { completion in
@@ -195,20 +273,41 @@ publisher.sink(
     }
 )
 ```
-### 6. 1. Built-in Publishers
-These publishers are provided by Combine or Swift’s standard library to handle common tasks.
 
-- Just
-  - Emits a single value immediately and then completes.
+### Example
 
-## Example:
+```swift
+Just("Hello")
+    .sink(
+        receiveCompletion: { print($0) },
+        receiveValue: { print($0) }
+    )
+```
+
+---
+
+# 9. Built-in Publishers
+
+## Just
+
+Emits a single value immediately and then completes.
+
 ```swift
 let publisher = Just("Hello, Combine!")
 ```
 
-- Future
-  - Produces a single result (success or failure) at some point in the future. Often used for asynchronous tasks.
-## Example:
+### Use Cases
+
+* Mock data
+* Unit testing
+* Default values
+
+---
+
+## Future
+
+Produces a single success or failure value in the future.
+
 ```swift
 let publisher = Future<String, Error> { promise in
     DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
@@ -216,41 +315,295 @@ let publisher = Future<String, Error> { promise in
     }
 }
 ```
-- PassthroughSubject
-  - Allows manual publishing of values and completion events. Often used to bridge imperative code with Combine.
-## Example:
+
+### Use Cases
+
+* API requests
+* Database operations
+* Async tasks
+
+---
+
+## PassthroughSubject
+
+Allows manual publishing of values.
 
 ```swift
 let subject = PassthroughSubject<Int, Never>()
+
 subject.send(1)
+subject.send(2)
 subject.send(completion: .finished)
 ```
-- CurrentValueSubject
-  - Similar to PassthroughSubject, but it keeps track of its most recent value and can replay it to new subscribers.
-## Example:
+
+### Characteristics
+
+* No stored value
+* Sends only future values
+
+---
+
+## CurrentValueSubject
+
+Stores the latest value and replays it to new subscribers.
+
 ```swift
 let subject = CurrentValueSubject<Int, Never>(10)
+
 subject.send(20)
 ```
-- Empty
-  - Emits no values and completes immediately or optionally never completes.
-## Example:
+
+### Characteristics
+
+* Maintains current state
+* New subscribers receive latest value immediately
+
+---
+
+## Empty
+
+Produces no values.
+
 ```swift
 let publisher = Empty<Int, Never>()
 ```
-- Deferred
-  - Creates a publisher that waits until a subscriber subscribes before creating and delivering a publisher.
-## Example:
+
+### Use Cases
+
+* Testing
+* Placeholder publishers
+
+---
+
+## Deferred
+
+Creates a publisher only when someone subscribes.
+
 ```swift
 let publisher = Deferred {
     Just("Deferred Value")
 }
 ```
-- Timer
-  - Emits values on a schedule, often used for periodic updates.
-## Example:
+
+### Benefit
+
+Execution is delayed until subscription time.
+
+---
+
+## Timer Publisher
+
+Emits values periodically.
+
 ```swift
-let publisher = Timer.publish(every: 1.0, on: .main, in: .default).autoconnect()
+let publisher = Timer.publish(
+    every: 1.0,
+    on: .main,
+    in: .default
+)
+.autoconnect()
 ```
-- Operators as Publishers
-  - Operators like CombineLatest, Map, and FlatMap can also create new publishers by transforming or combining existing ones.
+
+### Use Cases
+
+* Countdowns
+* Polling
+* Auto refresh
+
+---
+
+## Operators as Publishers
+
+Operators create new publishers.
+
+Examples:
+
+* map
+* filter
+* flatMap
+* combineLatest
+* merge
+* zip
+
+```swift
+Just(10)
+    .map { $0 * 2 }
+```
+
+---
+
+# 10. System-Provided Publishers
+
+## NotificationCenter Publisher
+
+Publishes system notifications.
+
+```swift
+NotificationCenter.default.publisher(
+    for: UIApplication.didEnterBackgroundNotification
+)
+```
+
+### Use Cases
+
+* App lifecycle events
+* Custom notifications
+
+---
+
+## KVO Publisher
+
+Observes property changes using Key-Value Observing.
+
+```swift
+myObject.publisher(for: \.propertyName)
+```
+
+---
+
+## @Published Property Wrapper
+
+SwiftUI automatically creates publishers.
+
+```swift
+class ViewModel: ObservableObject {
+
+    @Published var value: Int = 0
+
+}
+```
+
+Whenever `value` changes, subscribers receive updates.
+
+---
+
+# 11. Custom Publishers
+
+You can create your own Publisher by conforming to the Publisher protocol.
+
+### Example
+
+```swift
+struct MyPublisher: Publisher {
+
+    typealias Output = Int
+    typealias Failure = Never
+
+    func receive<S>(subscriber: S)
+    where S: Subscriber,
+          Failure == S.Failure,
+          Output == S.Input {
+
+        subscriber.receive(
+            subscription: Subscriptions.empty
+        )
+    }
+}
+```
+
+### Interview Point
+
+Custom Publishers are useful when integrating legacy APIs or creating specialized data streams.
+
+---
+
+# 12. Built-in Subscribers
+
+Combine provides two commonly used subscribers.
+
+---
+
+## sink
+
+Handles values and completion using closures.
+
+```swift
+Just("Hello")
+    .sink { value in
+        print(value)
+    }
+```
+
+---
+
+## assign
+
+Automatically assigns emitted values to an object's property.
+
+```swift
+class MyObject {
+    var value = ""
+}
+
+let myObject = MyObject()
+
+Just("Updated Value")
+    .assign(to: \.value, on: myObject)
+```
+
+### Use Cases
+
+* MVVM binding
+* UI updates
+
+---
+
+# 13. Custom Subscribers
+
+You can create your own Subscriber by conforming to the Subscriber protocol.
+
+### Example
+
+```swift
+struct MySubscriber: Subscriber {
+
+    typealias Input = String
+    typealias Failure = Never
+
+    func receive(subscription: Subscription) {
+        subscription.request(.unlimited)
+    }
+
+    func receive(_ input: String) -> Subscribers.Demand {
+        print("Received: \(input)")
+        return .none
+    }
+
+    func receive(
+        completion: Subscribers.Completion<Never>
+    ) {
+        print("Completed")
+    }
+}
+```
+# 14. What is the role of AnyCancellable in Combine?
+AnyCancellable is an object that keeps a Combine subscription alive.
+
+If the AnyCancellable object is released from memory, the subscription is automatically cancelled.
+
+## Why Do We Need It?
+
+When you subscribe to a publisher using sink(), Combine returns an AnyCancellable.
+```swift
+let cancellable = publisher.sink { value in
+    print(value)
+}
+```
+
+If you don't store cancellable, the subscription may be cancelled immediately.
+
+## Simple Example
+```swift
+import Combine
+
+let publisher = Just("Hello Combine")
+
+let cancellable = publisher.sink { value in
+    print(value)
+}
+```
+## Output
+```swift
+Hello Combine
+```
+Here, cancellable keeps the subscription active.
