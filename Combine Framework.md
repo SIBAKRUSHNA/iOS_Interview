@@ -165,3 +165,33 @@ Values
 This lifecycle is a favorite interview question.
 
 ---
+### 3. What is a Publisher in Combine?
+A Publisher is the core component of the Combine framework that produces and emits values over time. It can send:
+  - Values (zero or more)
+  - Completion event (finished successfully)
+  - Failure event (error)
+
+Think of a Publisher as a data source that broadcasts information to interested subscribers.
+
+### 4. What is a Subscriber in Combine?
+A Subscriber is a component in Combine that receives values from a Publisher.
+It acts as the consumer in the Publisher–Subscriber pattern.
+
+  - Publisher → Subscriber
+
+The Publisher produces data, and the Subscriber receives and processes it.
+
+### 5. What is a sink and how is it used?
+In Combine, sink is a subscriber used to receive values and completion events from a publisher.
+It is one of the simplest ways to subscribe to a publisher.
+## Syntax
+```swift
+publisher.sink(
+    receiveCompletion: { completion in
+        print(completion)
+    },
+    receiveValue: { value in
+        print(value)
+    }
+)
+```
