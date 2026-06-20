@@ -195,3 +195,62 @@ publisher.sink(
     }
 )
 ```
+### 6. 1. Built-in Publishers
+These publishers are provided by Combine or Swift’s standard library to handle common tasks.
+
+- Just
+  - Emits a single value immediately and then completes.
+
+## Example:
+```swift
+let publisher = Just("Hello, Combine!")
+```
+
+- Future
+  - Produces a single result (success or failure) at some point in the future. Often used for asynchronous tasks.
+## Example:
+```swift
+let publisher = Future<String, Error> { promise in
+    DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+        promise(.success("Async Value"))
+    }
+}
+```
+- PassthroughSubject
+  - Allows manual publishing of values and completion events. Often used to bridge imperative code with Combine.
+## Example:
+
+```swift
+let subject = PassthroughSubject<Int, Never>()
+subject.send(1)
+subject.send(completion: .finished)
+```
+- CurrentValueSubject
+  - Similar to PassthroughSubject, but it keeps track of its most recent value and can replay it to new subscribers.
+## Example:
+```swift
+let subject = CurrentValueSubject<Int, Never>(10)
+subject.send(20)
+```
+- Empty
+  - Emits no values and completes immediately or optionally never completes.
+## Example:
+```swift
+let publisher = Empty<Int, Never>()
+```
+- Deferred
+  - Creates a publisher that waits until a subscriber subscribes before creating and delivering a publisher.
+## Example:
+```swift
+let publisher = Deferred {
+    Just("Deferred Value")
+}
+```
+- Timer
+  - Emits values on a schedule, often used for periodic updates.
+## Example:
+```swift
+let publisher = Timer.publish(every: 1.0, on: .main, in: .default).autoconnect()
+```
+- Operators as Publishers
+  - Operators like CombineLatest, Map, and FlatMap can also create new publishers by transforming or combining existing ones.
