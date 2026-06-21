@@ -15,7 +15,7 @@ Combine helps handle:
 Instead of callbacks and delegates, Combine uses **Publishers** and **Subscribers**.
 
 ---
-<img width="1024" height="1536" alt="ChatGPT Image Jun 21, 2026, 07_37_18 PM" src="https://github.com/user-attachments/assets/07edc75f-dc4b-47ae-9295-858dd1317a10" />
+<img width="1536" height="1024" alt="ChatGPT Image Jun 22, 2026, 01_45_52 AM" src="https://github.com/user-attachments/assets/464dfbd1-2477-4bbb-a464-9e396077a54b" />
 
 
 
