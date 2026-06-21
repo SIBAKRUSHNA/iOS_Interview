@@ -231,7 +231,7 @@ Just("Hello Combine")
 Think of a Publisher as a data source that broadcasts information to interested subscribers.
 
 ---
-<img width="1535" height="1024" alt="ChatGPT Image Jun 21, 2026, 07_41_23 PM" src="https://github.com/user-attachments/assets/a0b73361-b490-4967-a7ea-c08b7783316c" />
+<img width="1536" height="1024" alt="ChatGPT Image Jun 22, 2026, 01_37_20 AM" src="https://github.com/user-attachments/assets/6545dbd0-55b0-485f-b8d2-bd624b3a6bc9" />
 
 
 # 7. What is a Subscriber?
