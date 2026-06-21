@@ -40,7 +40,251 @@
      - `Issue`: UIKit doesn’t have built-in support for data binding, which makes implementing MVVM more challenging.
      - `Impact`: Developers often need to rely on libraries like RxSwift or Combine to implement reactive bindings, adding extra dependencies and complexity.
 
-### 7.
+### 7. # 🏗️ Clean Architecture in iOS (Swift)
+
+## 📖 What is Clean Architecture?
+
+Clean Architecture is a software design pattern that separates an application into independent layers. It improves maintainability, scalability, and testability by keeping business logic separate from UI and data sources.
+
+---
+
+## 🎯 Goals
+
+* ✅ Separation of Concerns
+* ✅ Easy Unit Testing
+* ✅ Scalability
+* ✅ Maintainability
+* ✅ Reusable Business Logic
+
+---
+
+# 🏛️ Architecture Layers
+
+```text
+┌─────────────────────┐
+│    Presentation     │
+│  View / ViewModel   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│       Domain        │
+│ UseCases / Entities │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│        Data         │
+│ Repository / API DB │
+└─────────────────────┘
+```
+
+---
+
+## 1️⃣ Presentation Layer
+
+### Responsibilities
+
+* Display UI
+* Handle User Actions
+* Call Use Cases
+* Update Views
+
+### Components
+
+* UIViewController
+* SwiftUI View
+* ViewModel
+
+---
+
+## 2️⃣ Domain Layer
+
+### Responsibilities
+
+* Business Logic
+* Application Rules
+* Use Cases
+* Entity Models
+
+### Components
+
+* Entities
+* Use Cases
+* Repository Protocols
+
+### Example Entity
+
+```swift
+struct User {
+    let id: Int
+    let name: String
+}
+```
+
+---
+
+## 3️⃣ Data Layer
+
+### Responsibilities
+
+* API Calls
+* Database Operations
+* Repository Implementations
+* Data Mapping
+
+### Components
+
+* API Service
+* Local Database
+* DTO Models
+* Repository Implementation
+
+---
+
+# 🔄 Data Flow
+
+```text
+User Action
+      ↓
+ViewController
+      ↓
+ViewModel
+      ↓
+UseCase
+      ↓
+Repository
+      ↓
+API / Database
+      ↓
+Response
+      ↓
+ViewModel
+      ↓
+UI Update
+```
+
+---
+
+# 📂 Folder Structure
+
+```text
+Project
+│
+├── Presentation
+│   ├── Views
+│   ├── ViewModels
+│   └── Coordinators
+│
+├── Domain
+│   ├── Entities
+│   ├── UseCases
+│   └── Repositories
+│
+├── Data
+│   ├── Network
+│   ├── Repository
+│   ├── DTOs
+│   └── Database
+│
+└── Core
+    ├── DependencyInjection
+    ├── Extensions
+    └── Utilities
+```
+
+---
+
+# 🔗 Dependency Rule
+
+```text
+Presentation
+      ↓
+   Domain
+      ↓
+    Data
+```
+
+### Important Rules
+
+✅ Data Layer depends on Domain Protocols
+
+❌ Domain Layer should NOT depend on:
+
+* UIKit
+* SwiftUI
+* Networking
+* Database
+
+---
+
+# 🚀 Benefits
+
+* Easy Unit Testing
+* Better Code Organization
+* Loose Coupling
+* Reusable Business Logic
+* Faster Development
+* Easier Maintenance
+* Scalable for Large Projects
+
+---
+
+# 🎤 Interview Questions
+
+### 1. What is Clean Architecture?
+
+A layered architecture pattern that separates UI, business logic, and data layers.
+
+### 2. What are the main layers?
+
+* Presentation
+* Domain
+* Data
+
+### 3. Which layer contains business logic?
+
+Domain Layer.
+
+### 4. What is a Use Case?
+
+A class that encapsulates a specific business operation.
+
+### 5. Why use Repository Pattern?
+
+To abstract data sources and improve testability.
+
+### 6. Can Domain depend on UIKit?
+
+No. Domain must remain framework-independent.
+
+### 7. What is Dependency Injection?
+
+Providing dependencies from outside instead of creating them inside a class.
+
+### 8. Why is Clean Architecture testable?
+
+Because layers are loosely coupled and dependencies can be mocked.
+
+---
+
+# ⚡ Quick Summary
+
+```text
+Presentation → UI Layer
+
+Domain → Business Logic
+
+Data → API / Database
+
+Flow:
+View → ViewModel → UseCase → Repository → API/DB
+```
+
+💡 Clean Architecture helps build scalable, maintainable, and testable iOS applications.
+
+<img width="1024" height="1536" alt="ChatGPT Image Jun 21, 2026, 10_39_14 PM" src="https://github.com/user-attachments/assets/8bb3f216-fe30-4ab0-8184-eff89c3ddb3d" />
+
 
 ### 8.
 
