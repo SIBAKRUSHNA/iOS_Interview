@@ -15,6 +15,9 @@ Combine helps handle:
 Instead of callbacks and delegates, Combine uses **Publishers** and **Subscribers**.
 
 ---
+<img width="1024" height="1536" alt="ChatGPT Image Jun 21, 2026, 07_37_18 PM" src="https://github.com/user-attachments/assets/07edc75f-dc4b-47ae-9295-858dd1317a10" />
+
+
 
 # 2. Why Combine?
 
@@ -228,6 +231,8 @@ Just("Hello Combine")
 Think of a Publisher as a data source that broadcasts information to interested subscribers.
 
 ---
+<img width="1535" height="1024" alt="ChatGPT Image Jun 21, 2026, 07_41_23 PM" src="https://github.com/user-attachments/assets/a0b73361-b490-4967-a7ea-c08b7783316c" />
+
 
 # 7. What is a Subscriber?
 
@@ -251,6 +256,8 @@ Just("Hello")
 ```
 
 ---
+<img width="1024" height="1536" alt="ChatGPT Image Jun 21, 2026, 07_49_20 PM" src="https://github.com/user-attachments/assets/a135eff5-e7de-48c5-817a-85be229ad304" />
+
 
 # 8. What is sink?
 
@@ -607,6 +614,9 @@ let cancellable = publisher.sink { value in
 Hello Combine
 ```
 Here, cancellable keeps the subscription active.
+
+<img width="1536" height="1024" alt="ChatGPT Image Jun 21, 2026, 07_22_32 PM" src="https://github.com/user-attachments/assets/9acc1377-3c73-4ddd-8166-34eac5c9a520" />
+
 
 # 15. Just vs Future vs PassthroughSubject in Combine
 
@@ -1227,3 +1237,7 @@ searchTextPublisher
 ### Interview Answer
 
 > `debounce` waits for a pause before emitting the latest value, `throttle` limits how often values are emitted within a time interval, and `removeDuplicates` prevents consecutive duplicate values from being published.
+
+# 20. Operators
+
+<img width="1024" height="1536" alt="ChatGPT Image Jun 21, 2026, 07_04_24 PM" src="https://github.com/user-attachments/assets/aae32e64-a6b7-4d33-8a9f-c095d15ee792" />
