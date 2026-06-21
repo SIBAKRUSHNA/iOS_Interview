@@ -1,6 +1,7 @@
 ## iOS Developers Interview App and ViewController life cycle Questions
 
-![](https://miro.medium.com/v2/resize:fit:2000/1*09LWJWdZSuPrv15I16WYiw.png)
+<img width="1024" height="1536" alt="ChatGPT Image Jun 22, 2026, 12_54_26 AM" src="https://github.com/user-attachments/assets/398443a6-4f6f-4ee8-a99d-d6081941f13d" />
+
 
 ### 1. What is the application life cycle?
   - The application life cycle constitutes the sequence of events that occurs between the launch and termination of 
