@@ -607,3 +607,623 @@ let cancellable = publisher.sink { value in
 Hello Combine
 ```
 Here, cancellable keeps the subscription active.
+
+# 15. Just vs Future vs PassthroughSubject in Combine
+
+## Overview
+
+`Just`, `Future`, and `PassthroughSubject` are all publishers in Apple's Combine framework, but they are designed for different use cases.
+
+| Publisher            | Emits              | Async | Can Fail       | Manual Emission |
+| -------------------- | ------------------ | ----- | -------------- | --------------- |
+| `Just`               | One value          | ❌ No  | ❌ No (`Never`) | ❌ No            |
+| `Future`             | One value or error | ✅ Yes | ✅ Yes          | ❌ No            |
+| `PassthroughSubject` | Multiple values    | ✅ Yes | ✅ Yes          | ✅ Yes           |
+
+---
+
+## 1. Just
+
+### What is it?
+
+`Just` publishes a single value immediately and then finishes.
+
+### Example
+
+```swift
+import Combine
+
+let publisher = Just("Hello Combine")
+
+publisher
+    .sink { value in
+        print(value)
+    }
+```
+
+### Output
+
+```text
+Hello Combine
+```
+
+### Lifecycle
+
+```text
+Just
+ ↓
+Value
+ ↓
+Finished
+```
+
+### Use Cases
+
+* Mock data
+* Unit testing
+* Default values
+* Immediate value publishing
+
+### Key Points
+
+* Emits exactly one value.
+* Completes immediately.
+* Cannot fail (`Failure = Never`).
+
+---
+
+## 2. Future
+
+### What is it?
+
+`Future` publishes a single value or error at some point in the future.
+
+### Example
+
+```swift
+import Combine
+
+func fetchData() -> Future<String, Error> {
+    Future { promise in
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            promise(.success("Data Loaded"))
+        }
+    }
+}
+```
+
+### Subscription
+
+```swift
+fetchData()
+    .sink(
+        receiveCompletion: { print($0) },
+        receiveValue: { print($0) }
+    )
+```
+
+### Output
+
+```text
+Data Loaded
+finished
+```
+
+### Lifecycle
+
+```text
+Future
+ ↓
+Async Work
+ ↓
+Success / Failure
+ ↓
+Finished
+```
+
+### Use Cases
+
+* API calls
+* Database operations
+* File loading
+* One-time asynchronous tasks
+
+### Key Points
+
+* Emits only one result.
+* Can emit success or failure.
+* Completes automatically after publishing.
+
+---
+
+## 3. PassthroughSubject
+
+### What is it?
+
+`PassthroughSubject` allows values to be manually pushed to subscribers.
+
+### Example
+
+```swift
+import Combine
+
+let subject = PassthroughSubject<String, Never>()
+
+subject
+    .sink { value in
+        print(value)
+    }
+
+subject.send("First")
+subject.send("Second")
+subject.send("Third")
+```
+
+### Output
+
+```text
+First
+Second
+Third
+```
+
+### Completion
+
+```swift
+subject.send(completion: .finished)
+```
+
+### Lifecycle
+
+```text
+PassthroughSubject
+ ↓
+send("First")
+ ↓
+send("Second")
+ ↓
+send("Third")
+ ↓
+Finished (Optional)
+```
+
+### Use Cases
+
+* Button taps
+* User actions
+* Notifications
+* Event broadcasting
+* View ↔ ViewModel communication
+
+### Key Points
+
+* Can emit multiple values.
+* Values are sent manually using `send()`.
+* Supports completion and failure events.
+
+---
+
+## Real-World Examples
+
+### Just
+
+```swift
+let usernamePublisher = Just("Siba")
+```
+
+Use when data is already available.
+
+### Future
+
+```swift
+func login() -> Future<User, Error>
+```
+
+Use for a single asynchronous operation.
+
+### PassthroughSubject
+
+```swift
+let buttonTap = PassthroughSubject<Void, Never>()
+
+buttonTap.send(())
+```
+
+Use for repeated user events.
+
+---
+
+## Interview Answer
+
+### What is the difference between Just, Future, and PassthroughSubject?
+
+* **Just** emits one value immediately and then completes.
+* **Future** emits one value or error asynchronously and then completes.
+* **PassthroughSubject** allows manual emission of multiple values over time and is commonly used for events and notifications.
+
+---
+
+## Quick Revision
+
+```text
+Just                → One value now
+Future              → One value later
+PassthroughSubject  → Many values whenever needed
+```
+
+### Memory Trick
+
+```text
+Just       = Present
+Future     = Later
+Subject    = Multiple Events
+```
+# 16. assign(to:on:) vs sink(receiveValue:)
+
+Both `assign` and `sink` are subscribers in Combine, but they serve different purposes.
+
+| assign(to:on:) | sink(receiveValue:) |
+|---------------|--------------------|
+| Updates a property automatically | Executes custom code |
+| Less flexible | More flexible |
+| Cannot handle completion | Can handle completion |
+| Ideal for data binding | Ideal for side effects and custom logic |
+
+## assign(to:on:)
+
+Use when you want to bind publisher output directly to an object's property.
+
+```swift
+Just("Siba")
+    .assign(to: \.name, on: user)
+```
+
+Equivalent to:
+
+```swift
+Just("Siba")
+    .sink { value in
+        user.name = value
+    }
+```
+
+## sink(receiveValue:)
+
+Use when you need custom actions on received values.
+
+```swift
+Just("Siba")
+    .sink { value in
+        print(value)
+        updateUI(value)
+    }
+```
+
+## Handling Completion
+
+`sink` can receive completion events:
+
+```swift
+publisher.sink(
+    receiveCompletion: { completion in
+        print(completion)
+    },
+    receiveValue: { value in
+        print(value)
+    }
+)
+```
+
+## When to Use?
+
+✅ **assign** → Simple property binding
+
+```swift
+publisher.assign(to: \.text, on: label)
+```
+
+✅ **sink** → Custom logic, side effects, logging, API calls
+
+```swift
+publisher.sink { value in
+    print(value)
+    analytics.track(value)
+}
+```
+
+### Interview Answer
+
+> `assign(to:on:)` is a specialized subscriber used for property binding, while `sink(receiveValue:)` is a general-purpose subscriber used to execute custom code whenever values are received.
+
+# 17. How Combine Replaces Delegation and Callbacks
+
+Before Combine, asynchronous communication was commonly handled using **delegates** and **completion handlers (callbacks)**.
+
+Combine provides a **reactive, declarative approach** where data is emitted by **Publishers** and consumed by **Subscribers**.
+
+---
+
+## 1. Traditional Callback Approach
+
+```swift
+func fetchUser(completion: @escaping (User?) -> Void) {
+    apiService.getUser { user in
+        completion(user)
+    }
+}
+
+fetchUser { user in
+    print(user?.name ?? "")
+}
+```
+
+### Problems
+
+- Nested callbacks can lead to "callback hell".
+- Hard to chain multiple asynchronous operations.
+- Error handling becomes scattered.
+- Difficult to manage complex data flows.
+
+---
+
+## 2. Traditional Delegate Approach
+
+```swift
+protocol LoginDelegate: AnyObject {
+    func loginDidSucceed(user: User)
+}
+
+class LoginManager {
+    weak var delegate: LoginDelegate?
+
+    func login() {
+        delegate?.loginDidSucceed(user: user)
+    }
+}
+```
+
+### Problems
+
+- Requires creating protocols.
+- Tight coupling between objects.
+- Becomes difficult when multiple listeners are needed.
+
+---
+
+## 3. Combine Approach
+
+```swift
+func fetchUser() -> AnyPublisher<User, Error> {
+    apiService.getUserPublisher()
+}
+
+fetchUser()
+    .sink(
+        receiveCompletion: { completion in
+            print(completion)
+        },
+        receiveValue: { user in
+            print(user.name)
+        }
+    )
+    .store(in: &cancellables)
+```
+
+### Benefits
+
+- No delegate protocols.
+- No completion-handler nesting.
+- Easy chaining with operators.
+- Built-in error handling.
+- Multiple subscribers can listen to the same publisher.
+- Cleaner and more readable code.
+
+---
+
+## Example: Delegate vs Combine
+
+### Delegate
+
+```swift
+protocol DataDelegate: AnyObject {
+    func didReceiveData(_ value: String)
+}
+```
+
+### Combine
+
+```swift
+let subject = PassthroughSubject<String, Never>()
+
+subject
+    .sink { value in
+        print(value)
+    }
+    .store(in: &cancellables)
+
+subject.send("Hello Combine")
+```
+
+---
+
+## Interview Answer
+
+**How does Combine replace delegation or callbacks?**
+
+Combine replaces delegates and callbacks by using a Publisher-Subscriber model. Instead of manually passing data through delegate methods or completion handlers, publishers emit values over time and subscribers react to those values. This results in cleaner, more maintainable, and composable asynchronous code with built-in support for error handling and data transformation.
+
+# 18. Threading in Combine
+
+Combine uses **Schedulers** to control where work is performed and where values are received.
+
+## subscribe(on:)
+
+Controls **where the publisher performs its work**.
+
+```swift
+publisher
+    .subscribe(on: DispatchQueue.global())
+```
+
+✅ Used for background tasks (networking, parsing, heavy computations).
+
+---
+
+## receive(on:)
+
+Controls **where the subscriber receives values**.
+
+```swift
+publisher
+    .receive(on: DispatchQueue.main)
+```
+
+✅ Used for UI updates.
+
+---
+
+## Common Usage
+
+```swift
+publisher
+    .subscribe(on: DispatchQueue.global())
+    .receive(on: DispatchQueue.main)
+    .sink { value in
+        self.label.text = value
+    }
+    .store(in: &cancellables)
+```
+
+### Quick Difference
+
+| subscribe(on:) | receive(on:) |
+|---------------|--------------|
+| Controls upstream work | Controls downstream delivery |
+| Background processing | UI updates |
+| Publisher side | Subscriber side |
+
+### Interview Answer
+
+> `subscribe(on:)` determines where the publisher does its work, while `receive(on:)` determines where subscribers receive values. Typically, heavy work runs on a background queue and UI updates are delivered on the main queue.
+
+# 19. debounce vs throttle vs removeDuplicates
+
+These are Combine operators used to control how frequently values are emitted.
+
+---
+
+## 1. debounce
+
+Waits for a pause in incoming events before emitting the latest value.
+
+### Example
+
+```swift
+searchTextPublisher
+    .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+```
+
+### Use Case
+
+- Search bars
+- User typing input
+- Avoid excessive API calls
+
+### Timeline
+
+```text
+Input:  H -- He -- Hel -- Hell -- Hello
+Output: ------------------------ Hello
+```
+
+Only the final value is emitted after the user stops typing.
+
+---
+
+## 2. throttle
+
+Limits how often values are emitted.
+
+### Example
+
+```swift
+publisher
+    .throttle(for: .seconds(1),
+              scheduler: RunLoop.main,
+              latest: true)
+```
+
+### Use Case
+
+- Button taps
+- Scroll events
+- Location updates
+
+### Timeline
+
+```text
+Input:  A B C D E F
+Output: A ----- D ----- F
+```
+
+Only one value is emitted per time interval.
+
+---
+
+## 3. removeDuplicates
+
+Prevents consecutive duplicate values from being emitted.
+
+### Example
+
+```swift
+publisher
+    .removeDuplicates()
+```
+
+### Timeline
+
+```text
+Input:  A A B B C C C D
+Output: A B C D
+```
+
+### Use Case
+
+- Search text
+- State updates
+- Avoid unnecessary UI refreshes
+
+---
+
+## Common Search Example
+
+```swift
+searchTextPublisher
+    .removeDuplicates()
+    .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+    .sink { text in
+        searchAPI(text)
+    }
+    .store(in: &cancellables)
+```
+
+### What Happens?
+
+1. Duplicate text is ignored.
+2. Waits until the user stops typing for 500 ms.
+3. Makes a single API call.
+
+---
+
+## Quick Difference
+
+| Operator | Purpose |
+|-----------|----------|
+| `debounce` | Wait for inactivity before emitting |
+| `throttle` | Limit emission frequency |
+| `removeDuplicates` | Ignore consecutive duplicate values |
+
+### Interview Answer
+
+> `debounce` waits for a pause before emitting the latest value, `throttle` limits how often values are emitted within a time interval, and `removeDuplicates` prevents consecutive duplicate values from being published.
