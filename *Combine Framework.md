@@ -584,7 +584,7 @@ struct MySubscriber: Subscriber {
 }
 ```
 # 14. What is the role of AnyCancellable in Combine?
-AnyCancellable is an object that keeps a Combine subscription alive.
+AnyCancellable is a type in Combine that manages the lifecycle of a subscription.
 
 If the AnyCancellable object is released from memory, the subscription is automatically cancelled.
 
