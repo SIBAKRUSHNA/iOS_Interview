@@ -10,13 +10,15 @@
    `Compact` - Compact means narrow space.
    `Regular` - Regular means wider space.
 
-   ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lOlo8WRtw-C37NSyZES5yQ.png)
+  <img width="1536" height="1024" alt="ChatGPT Image Jun 23, 2026, 11_52_04 AM" src="https://github.com/user-attachments/assets/2b03eed0-5757-4ea9-81ea-bec26383d193" />
+
 
 ### 4. What is content hugging and content compression resistance priority?
    - Hugging => Content does not want to grow.
    - Compression Resistance => Content does not want to shrink.
      
-     ![](https://miro.medium.com/v2/resize:fit:2000/1*rIGewLhCwKyVkbXuI-ar8g.png)
+     <img width="1156" height="1361" alt="ChatGPT Image Jun 23, 2026, 11_53_35 AM" src="https://github.com/user-attachments/assets/f6b1cdf5-a26b-42d4-9f94-26b6f04b164c" />
+
      
 ### 5. What is constraints in autolayout in swift?
    - Constraints are rules that define how UI elements should be positioned and sized relative to each other and their container.
