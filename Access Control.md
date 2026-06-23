@@ -7,7 +7,8 @@
   - private
   - fileprivate
 
-![](https://i.sstatic.net/niGYM.png)
+<img width="1536" height="1024" alt="ChatGPT Image Jun 23, 2026, 11_47_58 AM" src="https://github.com/user-attachments/assets/07d1ed7f-357d-4c4a-8323-90044cfe8e2a" />
+
 
 ### 2. What is the open access controls?
   - Access to data members and member functions not only within the same module or target but also outside of it.
