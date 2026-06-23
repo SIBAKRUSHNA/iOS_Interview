@@ -1,5 +1,8 @@
 ## iOS Developers Interview Dependency injection Questions
 
+<img width="1024" height="1536" alt="ChatGPT Image Jun 23, 2026, 11_16_19 AM" src="https://github.com/user-attachments/assets/a1259999-aa3f-499c-8532-5169bebb99ef" />
+
+
 ### 1. What is dependance injection? 
   - Dependency injection is a technique in which an object receives other objects that it depends on.
     
