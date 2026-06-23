@@ -3,7 +3,7 @@
  ### 1. What is SwiftUI?
   - SwiftUI is a modern declarative framework by Apple for building user interfaces across all Apple platforms.
 
-<img width="1024" height="1536" alt="ChatGPT Image Jun 2, 2026, 09_31_33 PM" src="https://github.com/user-attachments/assets/6480fe19-51b9-4b7e-894d-939899731dca" />
+<img width="1024" height="1536" alt="ChatGPT Image Jun 23, 2026, 11_41_41 AM (1)" src="https://github.com/user-attachments/assets/ea785779-06a6-465c-92c1-9a465878c9d9" />
 
 
  ### 2. What is some in swiftUI?
