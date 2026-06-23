@@ -1,5 +1,9 @@
 ## iOS Developers Interview SOLID Principles Questions
 
+<img width="1024" height="1536" alt="ChatGPT Image Jun 23, 2026, 11_32_24 AM" src="https://github.com/user-attachments/assets/2d4f09cf-396c-469a-9519-fd1e499bc002" />
+
+
+
 ### 1. SOLID Principles in Swift
 
  - `Single Responsibility Principle`
