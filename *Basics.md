@@ -120,3 +120,29 @@ print(user.age)   // 30
      
 ### 17. What is apple human interface guidelines(HIG)?
    - The HIG offers guidance and best practices for designing exceptional user experiences across all Apple platforms.
+### 18. Copy-on-Write (CoW) in Swift
+
+## Definition
+
+Copy-on-Write (CoW) is a memory optimization technique used by Swift value types such as `Array`, `String`, `Dictionary`, and `Set`. Instead of creating a copy immediately when assigning a value to another variable, Swift shares the same memory storage. A new copy is created only when one of the variables modifies the data.
+
+## Example
+
+```swift
+var arr1 = [1, 2, 3]
+var arr2 = arr1
+
+// No copy is made yet
+
+arr2.append(4)
+
+// Copy happens here because arr2 is modified
+
+print(arr1) // [1, 2, 3]
+print(arr2) // [1, 2, 3, 4]
+```
+
+**Explanation:**
+- `arr1` and `arr2` initially share the same storage.
+- When `arr2` is modified using `append(4)`, Swift creates a separate copy for `arr2`.
+- This preserves the value semantics of Swift collections.
